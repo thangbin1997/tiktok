@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+ul{
+    display: flex;
+
+    li{
+        list-style: none;
+    }
+}
+a{
+    color: black;
+}
+.App{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}

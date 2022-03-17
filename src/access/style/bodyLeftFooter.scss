@@ -1,0 +1,29 @@
+.body__left__footer{
+    position: relative;
+    padding-top: 16px;
+    padding-left: 8px;
+    margin-bottom: 100px;
+    >p{
+        font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+    color: rgba(22, 24, 35, 0.5);
+    }
+}
+.body__left__footer-items{
+    margin-bottom: 8px;
+    .body__left__footer-item{
+        color: rgba(22, 24, 35, 0.5);
+        font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 17px;
+        display: inline-block;
+        margin-right: 6px;
+        margin-top: 5px;
+    }
+}

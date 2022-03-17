@@ -1,0 +1,250 @@
+@mixin middle{
+    text-align: center;
+    vertical-align: middle;
+}
+.poiter{
+    cursor: pointer;
+}
+.text-bold{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+// bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyys
+.container__body{
+    margin-top: 60px;
+    display: flex;
+    width: 100vw;
+    max-width: 1150px;
+    justify-content: space-between;
+    align-self: center;
+    padding: 20px 0 26px 8px;
+    background-color: #fff;
+    height: 100%; 
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: right top;
+    position: fixed;
+    min-height: 100%;
+    scrollbar-width: 1px;
+}
+
+.body__left{
+    width: 356px;
+    padding-right: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    // scrollbar-width: thin;
+    
+
+    &__pages{
+        margin-bottom: 8px;
+        border-bottom: 1px solid RGB(240, 240, 240);
+    }
+}
+.body__right{
+    margin-right: 16px;
+    margin-left: 16px;
+    width: 692px;
+    max-width: 692px;
+    padding: 24px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+
+.body__left__pages-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    &-item{
+        @include middle;
+        padding: 8px;
+        display: flex;
+        justify-content: flex-start;
+
+        a{
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            
+            .pages-icon{
+                width: 25px;
+                height: 25px;
+            }
+            .text{
+                font-size: 18px;
+                font-weight: 700;
+                margin-left: 8px;
+                line-height: 25px;
+                font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+                @include middle;
+                display: block;
+                align-items: center;
+            }
+
+        }
+    }
+}
+
+.pages-active{
+    a{
+        color: RGB(254, 43, 84);
+    }
+}
+
+.body__left__dataPropose{
+    padding: 16px 0;
+    border-bottom: 1px solid RGB(240, 240, 240);
+    position: relative;
+    .body__left__dataPropose-title{
+        padding: 0 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        color: rgba(81, 82, 85,0.7);
+    }
+}
+.body__left__dataProposes{
+    display: flex;
+    flex-direction: column;
+}
+.dataPropose__info{
+    display: flex;
+    flex-direction: column;
+}
+.dataPropose__item{
+    padding: 8px;
+    position: relative;
+    a{
+        display: flex;
+
+        img{
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+        }
+    }
+    .dataPropose__info-nickname{
+        color: rgb(22, 24, 35);
+        font-family: "IBM Plex Sans", SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: -2px;
+        max-width: 260px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .dataPropose__info-name{
+        color: rgba(22, 24, 35, 0.75);
+    font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 260px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    }
+}
+.body__left__dataPropose-more{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 8px;
+    margin-top: 8px;
+    color: rgba(254, 44, 85,0.7);
+    font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+.dataProposes{
+    position: relative;
+}
+.dataPropose__item:hover{
+    background-color: rgba(22, 24, 35, 0.03);
+    border-radius: 4px;
+}
+.data__review{
+    position: absolute;
+    width: 320px;
+    box-sizing: border-box;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+    border-radius: 8px;
+    top: 50px; 
+    z-index: 2000;  
+    display: none; 
+    &-avatar{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+    img{
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        margin-right: 12px;
+        cursor: pointer;
+    }
+}
+.data__review__info-text{
+    display: flex;
+    flex-direction: column;
+}
+.data__review-contact{
+    display: flex;
+    margin-top: 8px;
+    &-text{
+        margin: 0 8px;
+        color:rgba(22, 24, 35, 0.75)
+    }
+}
+.data__review-btn{
+    border-radius: 4px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(254, 44, 85);
+    min-width: 106px;
+    min-height: 28px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    font-family: ProximaNova, PingFangSC, sans-serif;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+.followed{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    color: rgb(22, 24, 35);
+    border-color: rgba(22, 24, 35, 0.12);
+    background-color: rgb(255, 255, 255);
+}
+
+.active{
+    display: block;
+}

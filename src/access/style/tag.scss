@@ -1,0 +1,63 @@
+.tag__container{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 8px 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid RGB(240, 240, 240);
+    .tag__head p{
+        color: rgba(22, 24, 35, 0.75);
+        font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        padding-bottom: 16px;
+    }
+    
+}
+.tag__data{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    &-list{
+        a{
+            color: rgb(22, 24, 35);
+            transition: color 250ms ease 0s;
+            text-decoration: none;
+            cursor: pointer;
+            display: flex;
+        }
+    }
+    &-list{
+        display: flex;
+        box-sizing: border-box;
+        width: fit-content;
+        max-width: 100%;
+        margin-bottom: 12px;
+        padding: 3px 10px;
+        border: 1px solid rgba(22, 24, 35, 0.2);
+        border-radius: 12px;
+        transition: background 200ms ease-in-out 0s;
+        margin-right: 8px;
+        cursor: pointer;
+        &:hover{
+            background-color: RGB(248, 248, 248);
+        }
+    }
+}
+.tag__text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 6px;
+    max-width: 260px;
+}
+.tag__icon{
+    width: 16px;
+    height: 16px;
+}
