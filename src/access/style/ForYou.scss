@@ -4,6 +4,9 @@
 .none{
     display: none !important;
 }
+.liked{
+    color: red;
+}
 .video{
     display: flex;
     padding: 20px 0;
@@ -201,4 +204,8 @@
             }
         }
     }
+}
+.videosss{
+    width: 277px;
+    height: 494px;
 }

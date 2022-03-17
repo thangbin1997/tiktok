@@ -25,9 +25,9 @@ a{
     background-color: #fff;
     height: 100%; 
     flex: 1 1 auto;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior-y: contain;
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    // overscroll-behavior-y: contain;
     perspective: 1px;
     transform-style: preserve-3d;
     perspective-origin: right top;
@@ -42,8 +42,18 @@ a{
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
-    // scrollbar-width: thin;
-    
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 50px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(212, 212, 212);
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 15px;
+    }
+
+
 
     &__pages{
         margin-bottom: 8px;
@@ -56,9 +66,19 @@ a{
     width: 692px;
     max-width: 692px;
     padding: 24px 0;
-    overflow-x: hidden;
     overflow-y: auto;
-    
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 50px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(212, 212, 212);
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 15px;
+    }
 }
 
 .body__left__pages-list{
@@ -189,7 +209,8 @@ a{
     box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
     border-radius: 8px;
     top: 50px; 
-    z-index: 2000;  
+    z-index: 2000; 
+     
     display: none; 
     &-avatar{
         display: flex;

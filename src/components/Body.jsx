@@ -27,13 +27,16 @@ function Body() {
         // setCheckFollow(!isFl)
     }
 
-
-
+var setTime;
     // hover account left page
     const handleMouseOver=(id)=>{
+        setTime= setTimeout(()=>{
             setCheckElementHover(id)
+        
+        },1000)
     }
     const handleMouseOut=()=>{
+        clearTimeout(setTime)
         setCheckElementHover()
     }
   return (
@@ -85,6 +88,8 @@ function Body() {
                                         </div>
                                     </a>
                                 </li>
+
+                                {/*                 ${checkElementHover === item.id ? 'active' : ''}       */}
                                 <div className={`data__review ${checkElementHover === item.id ? 'active' : ''}`} >
                                 <div className='data__review-avatar'>
                                     <img src={item.avatar} alt={item.names} />

@@ -42,10 +42,14 @@ const menus=[
 function ForYou() {
   const [playTime, setPlayTime] = useState(0);
   const [isLike,setIsLike]=useState(false);
+  const [indexLike,setIndexLikee]=useState(0);
   const [indexShare,setIndexShare]=useState(0);
   const [checkFollow,setCheckFollow]=useState(false);
 
-
+const handleLikeBtn=(index)=>{
+    setIndexLikee(index)
+    setIsLike(!isLike)
+}
   const handleBtnFolow=(id)=>{
     videos.map(video=>{
       if(video.id === id){
@@ -143,9 +147,13 @@ const handleProgress = (state) => {
                             // volume=0.5;
                             onProgress={handleProgress}
                         />
+                        <video className='videosss' controls src={item.video}></video>
                       </div>
                       <div className="video__right__bottom-icons">
-                          <div className="video__right__bottom-icon-like">
+                          <div className={`video__right__bottom-icon-like 
+                          ${index === indexLike && isLike ? "liked" : ''}`} 
+                              onClick={()=>handleLikeBtn(index)}
+                          >
                               <div className='icon-box'>
                                   <AiTwotoneHeart className='video__right__bottom-icon'/>
                               </div>
