@@ -147,7 +147,6 @@ const handleProgress = (state) => {
                             // volume=0.5;
                             onProgress={handleProgress}
                         />
-                        <video className='videosss' controls src={item.video}></video>
                       </div>
                       <div className="video__right__bottom-icons">
                           <div className={`video__right__bottom-icon-like 

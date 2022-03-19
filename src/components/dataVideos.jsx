@@ -2,9 +2,59 @@ import avatar1 from '../access/image/Avatar1.jpeg'
 import avatar2 from '../access/image/Avatar2.jpeg'
 import avatar3 from '../access/image/Avatar3.jpeg'
 import video1 from '../access/video/Video1.mp4'
-import video2 from '../access/video/Video2.mp4'
-import video3 from '../access/video/Video3.mp4'
+import video2 from '../access/video/video2.mp4'
+import video3 from '../access/video/video3.mp4'
+import video4 from '../access/video/video4.mp4'
+import video5 from '../access/video/video5.mp4'
+import video6 from '../access/video/video6.mp4'
+import video7 from '../access/video/video7.mp4'
+import video8 from '../access/video/video8.mp4'
+import video9 from '../access/video/video9.mp4'
+import video10 from '../access/video/video10.mp4'
+import video11 from '../access/video/video11.mp4'
+import video12 from '../access/video/video12.mp4'
+import video13 from '../access/video/video13.mp4'
+import video14 from '../access/video/video14.mp4'
+import video15 from '../access/video/video15.mp4'
+import video16 from '../access/video/video16.mp4'
+import video17 from '../access/video/video17.mp4'
+import video18 from '../access/video/video18.mp4'
+import video19 from '../access/video/video19.mp4'
+import video20 from '../access/video/video20.mp4'
 
+
+const randomLike=()=>{
+    const num=Math.floor(Math.random()*10000000)
+    if(num > 999 && num < 1000000){
+        return (num/1000).toFixed(1) + ' K';
+    }else if(num > 1000000){
+        return (num/1000000).toFixed(1) + ' M';
+    }else if(num < 900){
+        return num;
+    }
+}
+
+const randomComment=()=>{
+    const num=Math.floor(Math.random()*10000)
+    if(num > 999 && num < 1000000){
+        return (num/1000).toFixed(1) + ' K';
+    }else if(num > 1000000){
+        return (num/1000000).toFixed(1) + ' M';
+    }else if(num < 900){
+        return num;
+    }
+}
+
+const randomShare=()=>{
+    const num=Math.floor(Math.random()*10000)
+    if(num > 999 && num < 1000000){
+        return (num/1000).toFixed(1) + ' K';
+    }else if(num > 1000000){
+        return (num/1000000).toFixed(1) + ' M';
+    }else if(num < 900){
+        return num;
+    }
+}
 
 
 const datasVideos=[
@@ -16,9 +66,9 @@ const datasVideos=[
         title:'Con bạch tuộc toàn Mỡ',
         tag:[' learnontiktok',' music'],
         music:'nhạc nền - Ca Sĩ Duy Mạnh✅',
-        like:2873,
-        comments:51,
-        share:1,
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:false,
         avatar:avatar1,
         video:video1,
@@ -31,12 +81,12 @@ const datasVideos=[
         title:'Hay nè!',
         tag:[' learnontiktok',' music',' thanhcongnghe',' taiphen'],
         music:'nhạc nền - Tài Phèn Tech',
-        like:273,
-        comments:28,
-        share:4,
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:true,
         avatar:avatar2,
-        video:video2,
+        video:video7,
     },
     {
         id:3,
@@ -46,9 +96,9 @@ const datasVideos=[
         title:'(Dc:@theimmortal_ ) 😙',
         tag:[' music',' thanhcongnghe',' ngoktam'],
         music:'Anh Yêu Vội Thế (Mee Remix) - LaLa Trần, Mee Media',
-        like:2073,
-        comments:15,
-        share:2,
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:true,
         avatar:avatar3,
         video:video3,
@@ -61,12 +111,12 @@ const datasVideos=[
         title:'',
         tag:[' #nguoique'],
         music:'nhạc nền - Văn Thanh 2022',
-        like:'516.3k',
-        comments:5397,
-        share:3124,
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:false,
         avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/c92d52ade2812b5f169d5dcc6d74d656~c5_100x100.jpeg?x-expires=1647507600&x-signature=8OqHfr5JdIcCLwsf2893Av2DKuw%3D',
-        video:'https://v16-webapp.tiktok.com/c11be9b5024a6ba3ee6c483461a82fa2/623202a7/video/tos/useast2a/tos-useast2a-pve-0037-aiso/9be4b709d0b94efab8fec94cd54fa7a5/?a=1988&br=698&bt=349&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7ThYUfiDXq&l=202203160930320102451420911124E27A&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=11&rc=MzVobjw6ZmdkOzMzZjczM0ApO2RnaTs5O2U2Nzc8NDc8OGdhY2IzcjRvcmJgLS1kMWNzc2JiMjA0MzQ0YDFgYmMxXzQ6Yw%3D%3D&vl=&vr=',
+        video:video3,
     },
     {
         id:5,
@@ -74,15 +124,15 @@ const datasVideos=[
         nickname:'lokollllk',
         time:'',
         title:'',
-        tag:['#csgo', '#csgofunnymoments' ,'#csgomoments' ,'#csgobestmoments' ,'#gaming'],
+        tag:['#csgo', '#csgofunnymoments' ,'#csgomoments' ,'#csgobestmoments'],
         music:'original sound - FUNNY CSGO',
-        like:2073,
-        comments:15,
-        share:2,
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:true,
         avatar:'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/78278ab0e84da1d9e6b1ee96518182e4~c5_100x100.jpeg?x-expires=1647507600&x-signature=9zwLqqI4u6wt9kgUCdoomm%2Fpz%2B0%3D',
-        video:'https://v16-webapp.tiktok.com/311936109ce654f2ff4b101564374b1a/623202a4/video/tos/useast2a/tos-useast2a-ve-0068c004/30f64bb94e774452b3509e5829d5703b/?a=1988&br=940&bt=470&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7ThYUfiDXq&l=202203160930320102451420911124E27A&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am12eTY6Zjg8OjMzNzczM0ApaDs2ZDdlOGVpNzU6MzYzN2dwcmFwcjRfYmdgLS1kMTZzczI0YC1hYi4xYzFgY182Yy06Yw%3D%3D&vl=&vr=',
-    },
+        video:video5,
+       },
     {
         id:6,
         names:'nhantiktok113Nhân',
@@ -91,13 +141,13 @@ const datasVideos=[
         title:'Nó lạ đến khó tả 😪',
         tag:['#giaitri' ,'#nhancongtu', '#haihuoc', '#F0 ','#covid'],
         music:'nhạc nền - Nhân Công Tử ✅',
-        like:3634,
-        comments:3452,
-        share:'19k',
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:false,
         avatar:avatar3,
-        video:'https://v16-webapp.tiktok.com/d56b854c2fcfb4171a67df8ddf793cfc/6232369f/video/tos/useast2a/tos-useast2a-pve-0037-aiso/8118dd8f335f4119a544d60b36b7ccef/?a=1988&br=4102&bt=2051&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7Thtd9iDXq&l=20220316131205010245242104154391CA&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=11&rc=M2RoMzo6ZnVtOzMzZjgzM0ApMzk1Ojk1PDw7Nzs2NGZpOmc0LTEvcjRnb2lgLS1kL2Nzc2MzMV41Y2IxMzMtXjVjMzI6Yw%3D%3D&vl=&vr=',
-    },
+        video:video6,
+       },
     {
         id:7,
         names:'anardreamshiANAR',
@@ -106,13 +156,13 @@ const datasVideos=[
         title:'Hi 😍❤️',
         tag:['music'],
         music:'Title - Meghan Trainor',
-        like:'1.3m',
-        comments:'345k',
-        share:'211.5k',
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:false,
         avatar:'https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/387c5bf7503f5ddaef82106d8b62b149.jpeg?x-expires=1647522000&x-signature=vGp7%2BUB1cN%2Fiq5KQIWCWQdKIVSI%3D',
-        video:'https://v16-webapp.tiktok.com/262bdb016051e2c5a93369d8e607ec8d/62323691/video/tos/alisg/tos-alisg-pve-0037c001/0c4430b7aeb543aebcd0c4b958b251fd/?a=1988&br=7868&bt=3934&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7Thtd9iDXq&l=20220316131205010245242104154391CA&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=anA1aGg6Zm5sOTMzODczNEApMzU8Ojs6ZTw5N2Y2NjRoNmduam9ycjRvLnNgLS1kMS1zc142Y2BgLS1eXjRgYTNgMjM6Yw%3D%3D&vl=&vr=',
-    },
+        video:video4,
+      },
     {
         id:8,
         names:'hoaa.hanassiiĐào',
@@ -121,12 +171,12 @@ const datasVideos=[
         title:'Tôi mỗi khi nghe nhạc này kiểu :)) nhạc gây thương nhớ thực sự é',
         tag:[],
         music:'nhạc nền - T h ằ n g H ề K h ó c 🇻🇳 - Dj Meo Meo',
-        like:2073,
-        comments:1500,
-        share:200,
+        like:randomLike(),
+        comments:randomComment(),
+        share:randomShare(),
         isFolow:false,
         avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1647522000&x-signature=4YLmNw0tnLQ3ogjTXlCZMAR%2BuPQ%3D',
-        video:'https://v16-webapp.tiktok.com/e71cde932d33c4ba633167877649b456/6232384d/video/tos/useast2a/tos-useast2a-pve-0037-aiso/055947fd2ca9406b91ab8cfac5d72871/?a=1988&br=3280&bt=1640&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7ThDr9iDXq&l=2022031613192201024524222600439E5C&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=11&rc=MzQ7bWc6Zm11OzMzZjgzM0ApNDk4ODZpNzw2N2doOjlkO2cua2g2cjQwZGxgLS1kL2Nzcy9fMjUzYTA1LWIzXjRhM2M6Yw%3D%3D&vl=&vr=',
+        video:video7,
     },
     {
     id:9, 
@@ -136,12 +186,180 @@ const datasVideos=[
     title:'😵‍💫😵‍💫😵‍💫',
     tag:[],
     music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
-    like:2073,
-    comments:1500,
-    share:200,
+    like:randomLike(),
+    comments:randomComment(),
+        share:randomShare(),
     isFolow:false,
     avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
-    video:'https://v16-webapp.tiktok.com/f88e02c06572b98ef26e648e19d6fc28/6232389f/video/tos/useast2a/tos-useast2a-pve-0037-aiso/aca6d439ec164ccc9e757ea7f0df0f31/?a=1988&br=3032&bt=1516&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7Th3k9iDXq&l=202203161320480102440552202042E4B2&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amx1dDo6ZjUzOzMzZjgzM0ApN2g6ZGgzO2Q2NzY0ZTs3NmdnYi9qcjRnXzBgLS1kL2Nzc2BgL2EvLzZiY18yYzAyYy06Yw%3D%3D&vl=&vr=',
+    video:video8,
+},{
+    id:10, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video9,
+},{
+    id:11, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video10,
+},{
+    id:12, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video11,
+},{
+    id:13, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video12,
+},{
+    id:14, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video13,
+},{
+    id:15, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video14,
+},{
+    id:16, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video15,
+},{
+    id:17, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video16,
+},{
+    id:18, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video17,
+},{
+    id:19, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video18,
+},{
+    id:20, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video19,
+},{
+    id:21, 
+    names:'icetuti',
+    nickname:'c e t u t ❄️',
+    time:'',
+    title:'😵‍💫😵‍💫😵‍💫',
+    tag:[],
+    music:'Nutcase22 Captain RestrictedRemix - i c e t u t ❄️',
+    like:randomLike(),
+    comments:randomComment(),
+    share:randomShare(),
+    isFolow:false,
+    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    video:video20,
 }
 ]
 

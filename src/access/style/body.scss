@@ -39,15 +39,19 @@ a{
 .body__left{
     width: 356px;
     padding-right: 8px;
-    overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
+    &:hover{
+        &::-webkit-scrollbar-thumb {
+            background: rgb(212, 212, 212);
+        }
+    }
     &::-webkit-scrollbar {
         width: 4px;
         height: 50px;
     }
     &::-webkit-scrollbar-thumb {
-        background: rgb(212, 212, 212);
+        background: white;
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 15px;
@@ -69,12 +73,18 @@ a{
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior-y: contain;
+    &:hover{
+        &::-webkit-scrollbar-thumb {
+            background: rgb(212, 212, 212);
+        }
+    }
     &::-webkit-scrollbar {
         width: 4px;
         height: 50px;
     }
     &::-webkit-scrollbar-thumb {
-        background: rgb(212, 212, 212);
+        background: white;
+
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 15px;
