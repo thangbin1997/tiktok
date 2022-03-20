@@ -126,7 +126,7 @@
         .video__right__bottom-video{
             margin-right: 20px;
         }
-        .player{
+        .video__player{
         }
     }
     .video__right__bottom-icons{
@@ -186,6 +186,9 @@
         bottom: 90px;
         left: -20px;
         display: none;
+        &:hover{
+            display: block;
+        }
         a{
             display: flex;
             -webkit-box-align: center;

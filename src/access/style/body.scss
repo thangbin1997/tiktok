@@ -41,6 +41,7 @@ a{
     padding-right: 8px;
     overflow-y: auto;
     overscroll-behavior-y: contain;
+    
     &:hover{
         &::-webkit-scrollbar-thumb {
             background: rgb(212, 212, 212);
@@ -73,6 +74,7 @@ a{
     overflow-y: auto;
     overflow-x: hidden;
     overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
     &:hover{
         &::-webkit-scrollbar-thumb {
             background: rgb(212, 212, 212);

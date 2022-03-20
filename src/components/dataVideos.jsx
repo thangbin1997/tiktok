@@ -1,6 +1,7 @@
 import avatar1 from '../access/image/Avatar1.jpeg'
 import avatar2 from '../access/image/Avatar2.jpeg'
 import avatar3 from '../access/image/Avatar3.jpeg'
+import avatar5 from '../access/image/avatar5.jpeg'
 import video1 from '../access/video/Video1.mp4'
 import video2 from '../access/video/video2.mp4'
 import video3 from '../access/video/video3.mp4'
@@ -101,7 +102,7 @@ const datasVideos=[
         share:randomShare(),
         isFolow:true,
         avatar:avatar3,
-        video:video3,
+        video:video2,
     },
     {
         id:4,
@@ -115,7 +116,7 @@ const datasVideos=[
         comments:randomComment(),
         share:randomShare(),
         isFolow:false,
-        avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/c92d52ade2812b5f169d5dcc6d74d656~c5_100x100.jpeg?x-expires=1647507600&x-signature=8OqHfr5JdIcCLwsf2893Av2DKuw%3D',
+        avatar:avatar5,
         video:video3,
     },
     {
@@ -124,13 +125,13 @@ const datasVideos=[
         nickname:'lokollllk',
         time:'',
         title:'',
-        tag:['#csgo', '#csgofunnymoments' ,'#csgomoments' ,'#csgobestmoments'],
+        tag:['#csgo', '#csgofunnymoments' ,'#csgomoments'],
         music:'original sound - FUNNY CSGO',
         like:randomLike(),
         comments:randomComment(),
         share:randomShare(),
         isFolow:true,
-        avatar:'https://p16-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/78278ab0e84da1d9e6b1ee96518182e4~c5_100x100.jpeg?x-expires=1647507600&x-signature=9zwLqqI4u6wt9kgUCdoomm%2Fpz%2B0%3D',
+        avatar:avatar5,
         video:video5,
        },
     {
@@ -139,7 +140,7 @@ const datasVideos=[
         nickname:'Công Tử ✅',
         time:'',
         title:'Nó lạ đến khó tả 😪',
-        tag:['#giaitri' ,'#nhancongtu', '#haihuoc', '#F0 ','#covid'],
+        tag:['#giaitri' ,'#nhancongtu', '#haihuoc'],
         music:'nhạc nền - Nhân Công Tử ✅',
         like:randomLike(),
         comments:randomComment(),
@@ -160,7 +161,7 @@ const datasVideos=[
         comments:randomComment(),
         share:randomShare(),
         isFolow:false,
-        avatar:'https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/387c5bf7503f5ddaef82106d8b62b149.jpeg?x-expires=1647522000&x-signature=vGp7%2BUB1cN%2Fiq5KQIWCWQdKIVSI%3D',
+        avatar:avatar5,
         video:video4,
       },
     {
@@ -175,7 +176,7 @@ const datasVideos=[
         comments:randomComment(),
         share:randomShare(),
         isFolow:false,
-        avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1647522000&x-signature=4YLmNw0tnLQ3ogjTXlCZMAR%2BuPQ%3D',
+        avatar:avatar5,
         video:video7,
     },
     {
@@ -190,7 +191,7 @@ const datasVideos=[
     comments:randomComment(),
         share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video8,
 },{
     id:10, 
@@ -204,7 +205,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video9,
 },{
     id:11, 
@@ -218,7 +219,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video10,
 },{
     id:12, 
@@ -232,7 +233,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video11,
 },{
     id:13, 
@@ -246,7 +247,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video12,
 },{
     id:14, 
@@ -260,7 +261,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video13,
 },{
     id:15, 
@@ -274,7 +275,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video14,
 },{
     id:16, 
@@ -288,7 +289,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video15,
 },{
     id:17, 
@@ -302,7 +303,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video16,
 },{
     id:18, 
@@ -316,7 +317,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video17,
 },{
     id:19, 
@@ -330,7 +331,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video18,
 },{
     id:20, 
@@ -344,7 +345,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video19,
 },{
     id:21, 
@@ -358,7 +359,7 @@ const datasVideos=[
     comments:randomComment(),
     share:randomShare(),
     isFolow:false,
-    avatar:'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a122fa8a70f398543d222fd0b70c31a~c5_100x100.jpeg?x-expires=1647522000&x-signature=Bb1ItqK2NO23PH%2FB8KKjzEtBf48%3D',
+    avatar:avatar5,
     video:video20,
 }
 ]

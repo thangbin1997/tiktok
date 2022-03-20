@@ -3,6 +3,9 @@
     margin: 0;
     border: none;
 }
+html{
+    scroll-snap-type: y mandatory;
+}
 ul{
     display: flex;
 
