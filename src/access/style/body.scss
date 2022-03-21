@@ -15,33 +15,40 @@ a{
 }
 // bodyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyys
 .container__body{
+
     margin-top: 60px;
     display: flex;
     width: 100vw;
     max-width: 1150px;
     justify-content: space-between;
+    -webkit-box-pack: justify;
     align-self: center;
     padding: 20px 0 26px 8px;
     background-color: #fff;
     height: 100%; 
     flex: 1 1 auto;
-    // overflow-y: auto;
-    // overflow-x: hidden;
-    // overscroll-behavior-y: contain;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    perspective-origin: right top;
-    position: fixed;
     min-height: 100%;
-    scrollbar-width: 1px;
+    position: relative;
+
+
 }
 
 .body__left{
-    width: 356px;
-    padding-right: 8px;
+    overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
-    
+    perspective: 1px;
+    transform-style: preserve-3d;
+    padding-right: 12px;
+    perspective-origin: right top;
+    top: 80px;
+    bottom: 0;
+    width: 356px;
+    background: rgba(255, 255, 255, 1.0);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
+    -webkit-overflow-scrolling: touch;
     &:hover{
         &::-webkit-scrollbar-thumb {
             background: rgb(212, 212, 212);
@@ -57,9 +64,6 @@ a{
     &::-webkit-scrollbar-thumb {
         border-radius: 15px;
     }
-
-
-
     &__pages{
         margin-bottom: 8px;
         border-bottom: 1px solid RGB(240, 240, 240);
@@ -71,10 +75,10 @@ a{
     width: 692px;
     max-width: 692px;
     padding: 24px 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior-y: contain;
-    scroll-snap-type: y mandatory;
+    position: relative;
+    right: 0px;
+    // overflow-y: scroll;
+    // -webkit-overflow-scrolling: touch;
     &:hover{
         &::-webkit-scrollbar-thumb {
             background: rgb(212, 212, 212);

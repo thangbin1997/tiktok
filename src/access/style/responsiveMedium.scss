@@ -1,0 +1,62 @@
+@media screen and (max-width: 1071px){
+    .container__body{
+        padding-top: 0px;
+    }
+    .body__left{
+        width: 55px;
+        border-radius: 0px;
+        background-color: rgba(0, 0, 0, 0);
+        border-right: 1px solid rgba(22, 24, 35, 0.12);
+        box-shadow: 0px 2px 8px rgb(0 0 0 / 6%);
+        padding: 12px 8px;
+        &:hover{
+            &::-webkit-scrollbar-thumb {
+                background: white;
+            }
+        }
+        .body__left__pages .text{
+            display: none;
+        }
+        a{
+            display: block;
+        }
+        li{
+            padding: 8px 4px;
+        }
+        .body__left__pages{
+            margin: 0;
+            padding-bottom: 8px;
+        }
+        .body__left__pages-list-item:hover{
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+
+        // tai khoan de xuat
+        .body__left__dataPropose{
+            padding: 8px 0;
+            p{
+                display: none;
+            }
+            .dataPropose__item{
+                text-align: center;
+                display: block;
+                padding: 6px;
+            }
+            img{
+                margin: 0;
+            }
+        }
+        .body__left__dataFollow{
+            padding-bottom: 76px;
+            border: none;
+        }
+    }
+
+
+    .tag__container{
+        display: none;
+    }
+    .body__left__footer{
+        display: none;
+    }
+}

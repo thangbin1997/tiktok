@@ -11,6 +11,8 @@
     display: flex;
     padding: 20px 0;
     border-bottom: 1px solid RGB(239, 239, 239);
+    width: 624px;
+
     &__left{
         img{
             width: 56px;
@@ -21,7 +23,6 @@
 }
 .video__right{
     margin-left: 12px;
-    width: 624px;
     flex: 1 1 624px;
     position: relative;     
 

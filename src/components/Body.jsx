@@ -42,6 +42,8 @@ var setTime;
   return (
     <div className='container__body'>
 
+        <div className="container__body__left">
+
         <div className="body__left">
             <div className="body__left__pages">
                     <ul className='body__left__pages-list'>
@@ -122,7 +124,7 @@ var setTime;
                 <p className='body__left__dataPropose-more'>Xem tất cả</p>
             </div>
 {/* Dang follow */}
-            <div className="body__left__dataPropose">
+            <div className="body__left__dataPropose body__left__dataFollow">
                 <p className="body__left__dataPropose-title">Tài khoản đang Follow</p>
                 <ul className='body__left__dataProposes'>
                 {
@@ -179,6 +181,7 @@ var setTime;
             </div>
                 <Tag dataVideo={dataVideos} />
                 <LeftFooter/>
+        </div>
         </div>
 
         <div className="body__right">
