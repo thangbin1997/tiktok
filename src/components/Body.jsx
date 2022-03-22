@@ -3,6 +3,7 @@ import style from '../access/style/body.scss'
 import {Route,Routes,Link, BrowserRouter} from 'react-router-dom'
 import ForYou from '../pages/ForYou.jsx'
 import Folowing from '../pages/Folowing.jsx'
+import DataReview from './dataReview.jsx'
 import Tag from './Tag.jsx'
 import Live from '../pages/Live.jsx'
 import { AiFillHome } from "react-icons/ai";
@@ -14,30 +15,29 @@ import LeftFooter from './BodyLeftFooter.jsx'
 
 
 function Body() {
-    var setTimeHover;
     const [dataProposes, setDataProposes] = useState(dataPropose)
     const [dataFollows, setDataFollows] = useState(dataFollow)
-    const [checkFollow, setCheckFollow] = useState(true)
-    const [checkElementHover, setCheckElementHover]= useState()
+    const [checkFollow, setCheckFollow] = useState(false)
+    const [checkElementHover, setCheckElementHover]= useState(false)
+    const [idMouseHover, setIdMouseHover]= useState(null)
 
-    const handleBtnFollow=(isFl, id)=>{
-        // dataFollows[id-1].isFollow=!isFl
-        // const test=dataFollows.filter(e=>{return e.id === id})
-        // console.log(test.isFollow=!isFl)
-        // setCheckFollow(!isFl)
+
+    const handleBtnFollow=()=>{
+        
     }
 
 var setTime;
     // hover account left page
-    const handleMouseOver=(id)=>{
+    const handleMouseEnter=(id)=>{
         setTime= setTimeout(()=>{
-            setCheckElementHover(id)
-        
-        },1000)
-    }
-    const handleMouseOut=()=>{
+                setIdMouseHover(id)
+                setCheckElementHover(true)
+            },1000)
+        }
+    const handleMouseLeave=()=>{
         clearTimeout(setTime)
-        setCheckElementHover()
+        setIdMouseHover(null)
+        setCheckElementHover(false)
     }
   return (
     <div className='container__body'>
@@ -69,11 +69,11 @@ var setTime;
                 <p className="body__left__dataPropose-title">Tài khoản được đề xuất</p>
                 <ul className='body__left__dataProposes'>
                 {
-                    dataProposes.map((item,index)=>{
+                    dataProposes.map((item)=>{
                         return(
                                 <div key={item.id} className="dataProposes"
-                                    onMouseOver={()=>handleMouseOver(item.id)}
-                                    onMouseOut={()=>handleMouseOut()}
+                                onMouseEnter={()=>handleMouseEnter(item.id)}
+                                onMouseLeave={()=>handleMouseLeave()}
                                 >
                                     <li className="dataPropose__item" >
                                     <a href="#">
@@ -91,32 +91,12 @@ var setTime;
                                     </a>
                                 </li>
 
-                                {/*                 ${checkElementHover === item.id ? 'active' : ''}       */}
-                                <div className={`data__review ${checkElementHover === item.id ? 'active' : ''}`} >
-                                <div className='data__review-avatar'>
-                                    <img src={item.avatar} alt={item.names} />
-                                    <button className={`data__review-btn ${checkFollow || item.isFollow ? 'followed' : ''}`}
-                                        onClick={()=>handleBtnFollow(item.isFollow,item.id)}
-                                    >
-                                        {` ${checkFollow || item.isFollow ? 'Đang Follow' : 'Follow'}`}
-                                    </button>
-                                </div>
-                                <div className="data__review__info-text">
-                                    <p className="dataPropose__info-nickname text-bold poiter">
-                                        {item.nickname}
-                                    </p>
-                                    <p className="dataPropose__info-name poiter">
-                                        {item.names}
-                                    </p>
-                                </div>
-                                <div className="data__review-contact">
-                                    <p className="data__review-contact-follower text-bold">{item.follower}</p>
-                                        <p className="data__review-contact-text">Follower</p>
-                                    <p className="data__review-contact-like text-bold">{item.like}</p>
-                                        <p className="data__review-contact-text">Like</p>
-                                </div>
+                                <DataReview key={item.id} id={item.id} avatar={item.avatar} names={item.names}
+                                nickname={item.nickname} follower={item.follower} like={item.like} 
+                                checkElementHover={checkElementHover} idMouseHover={idMouseHover}
+                                />
+                            
                             </div>
-                                </div>
                             )
                         })
                     }
@@ -130,8 +110,8 @@ var setTime;
                 {
                     dataFollows.map((item,index)=>{
                         return(
-                            <div key={item.id} className="dataProposes" onMouseOver={(e)=>handleMouseOver(item.id)}
-                            onMouseOut={()=>handleMouseOut()}>
+                            <div key={item.id} className="dataProposes">
+
                                 <li className="dataPropose__item" 
                                 
                                 >
@@ -150,28 +130,7 @@ var setTime;
 
                                     </a>
                                 </li>
-                                <div className={`data__review ${checkElementHover === item.id ? 'active' : ''}`} >
-                                    <div className='data__review-avatar'>
-                                        <img src={item.avatar} alt={item.names} />
-                                        <button className={`data__review-btn ${checkFollow || item.isFollow ? 'followed' : ''}`}
-                                            onClick={()=>handleBtnFollow(item.isFollow,item.id)}
-                                        >
-                                            {` ${checkFollow || item.isFollow ? 'Đang Follow' : 'Follow'}`}
-                                        </button>
-                                    </div>
-                                    <p className="dataPropose__info-nickname text-bold">
-                                        {item.nickname}
-                                    </p>
-                                    <p className="dataPropose__info-name">
-                                        {item.names}
-                                    </p>
-                                    <div className="data__review-contact">
-                                        <p className="data__review-contact-follower text-bold">{item.follower}</p>
-                                            <p className="data__review-contact-text">Follower</p>
-                                        <p className="data__review-contact-like text-bold">{item.like}</p>
-                                            <p className="data__review-contact-text">Like</p>
-                                    </div>
-                                </div>
+                                
                             </div>
                         )
                     })
