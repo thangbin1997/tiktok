@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef,useEffect,useLayoutEffect } from 'react'
 import style from '../access/style/body.scss'
 import {Route,Routes,Link, BrowserRouter} from 'react-router-dom'
 import ForYou from '../pages/ForYou.jsx'
@@ -6,7 +6,7 @@ import Folowing from '../pages/Folowing.jsx'
 import DataReview from './dataReview.jsx'
 import Tag from './Tag.jsx'
 import Live from '../pages/Live.jsx'
-import { AiFillHome } from "react-icons/ai";
+import { AiOutlineHome } from "react-icons/ai";
 import { BsPeople,BsCameraVideo } from "react-icons/bs";
 import dataPropose from './datasPropose.jsx'
 import dataFollow from './dataFollow.jsx'
@@ -17,38 +17,66 @@ import LeftFooter from './BodyLeftFooter.jsx'
 function Body() {
     const [dataProposes, setDataProposes] = useState(dataPropose)
     const [dataFollows, setDataFollows] = useState(dataFollow)
-    const [checkFollow, setCheckFollow] = useState(false)
     const [checkElementHover, setCheckElementHover]= useState(false)
     const [idMouseHover, setIdMouseHover]= useState(null)
-
-
-    const handleBtnFollow=()=>{
-        
-    }
-
+    const [size, setSize] = useState(0);
+    const [isDataReview, setIsDataReview] = useState(false)
 var setTime;
+
     // hover account left page
-    const handleMouseEnter=(id)=>{
-        setTime= setTimeout(()=>{
-                setIdMouseHover(id)
-                setCheckElementHover(true)
-            },1000)
-        }
-    const handleMouseLeave=()=>{
-        clearTimeout(setTime)
-        setIdMouseHover(null)
-        setCheckElementHover(false)
+     function handleMouseEnter(id) {
+        setTime = setTimeout(() => {
+            setIdMouseHover(id)
+            setCheckElementHover(true)
+        }, 1000)
     }
+      function handleMouseLeave(){
+        clearTimeout(setTime)
+        setTimeout(() => {
+            setIdMouseHover(null)
+            setCheckElementHover(false)
+        }, 500);
+    }
+
+useEffect(() => {
+    const menuItems= document.querySelectorAll(".body__left__pages-list-item")
+    menuItems.forEach((menuItem)=>{
+        menuItem.onclick=()=>{
+            document.querySelector('.pages-active').classList.remove('pages-active')
+            menuItem.classList.add('pages-active')
+        }
+    })
+}, [])
+// ==========================================================
+useLayoutEffect(() => {
+    function updateSize() {
+      setSize(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+useLayoutEffect(()=>{
+    if(size>1071){
+        setIsDataReview(true)
+    }
+    else setIsDataReview(false)
+})
+
+
+// ==========================================================
+
   return (
     <div className='container__body'>
-
+        
         <div className="container__body__left">
 
         <div className="body__left">
+        
             <div className="body__left__pages">
                     <ul className='body__left__pages-list'>
-                        <li className='body__left__pages-list-item pages-active'>
-                            <Link to="/tiktok"><AiFillHome className='pages-icon'/>
+                        <li className='body__left__pages-list-item pages-active' >
+                            <Link to="/tiktok"><AiOutlineHome className='pages-icon'/>
                                 <p className="text">Dành cho bạn</p>
                             </Link>
                         </li>
@@ -90,20 +118,18 @@ var setTime;
                                         </div>
                                     </a>
                                 </li>
-
-                                <DataReview key={item.id} id={item.id} avatar={item.avatar} names={item.names}
+                                {/* data review old */}
+                                {isDataReview && <DataReview key={item.id} id={item.id} avatar={item.avatar} names={item.names}
                                 nickname={item.nickname} follower={item.follower} like={item.like} 
-                                checkElementHover={checkElementHover} idMouseHover={idMouseHover}
-                                />
-                            
+                                checkElementHover={checkElementHover} idMouseHover={idMouseHover}/>}
                             </div>
                             )
                         })
                     }
                 </ul>
                 <p className='body__left__dataPropose-more'>Xem tất cả</p>
-            </div>
-{/* Dang follow */}
+            
+                                                {/* Dang follow */}
             <div className="body__left__dataPropose body__left__dataFollow">
                 <p className="body__left__dataPropose-title">Tài khoản đang Follow</p>
                 <ul className='body__left__dataProposes'>
@@ -140,7 +166,20 @@ var setTime;
             </div>
                 <Tag dataVideo={dataVideos} />
                 <LeftFooter/>
-        </div>
+            </div>
+            </div>
+                                {/* datareview new */}
+                                {
+                dataProposes.map((item)=>{
+                    return(
+                    <div className='data__review__reposive__medium' key={item.id}>
+                        {!isDataReview && <DataReview key={item.id} id={item.id} avatar={item.avatar} names={item.names}
+                        nickname={item.nickname} follower={item.follower} like={item.like} 
+                        checkElementHover={checkElementHover} idMouseHover={idMouseHover}/>}
+                    </div>
+                )})
+            }
+
         </div>
 
         <div className="body__right">

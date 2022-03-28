@@ -1,4 +1,7 @@
-@media screen and (max-width: 1071px){
+@media only screen and (max-width: 1071px){
+    .medium__display__none{
+        display: none;
+    }
     .container__body{
         padding-top: 0px;
     }
@@ -47,6 +50,21 @@
                 margin: 0;
             }
         }
+        .data__review__reposive__medium{
+            position: absolute;
+            top: 200px;
+        }
+        .data__review{
+            position: absolute;
+            top: 255px;
+            left: 80px;
+            width: 300px;
+            z-index: 9999;
+            p{
+                display: block;
+            }
+            
+        }
         .body__left__dataFollow{
             padding-bottom: 76px;
             border: none;
@@ -60,4 +78,32 @@
     .body__left__footer{
         display: none;
     }
+
+
+
+
+
+    .body__right{
+        margin-left: 80px;
+    }
 }
+
+
+
+
+
+
+
+// --------------------------------------------------------------------------------
+@media screen and (max-width: 778px){
+    .header__middle,.coin{
+        display: none;
+    }
+    .video__right-btn {
+        right: 50px !important;
+    }
+    .video__right-title{
+        width: 300px !important;
+    }
+}
+

@@ -4,7 +4,6 @@ import useElementOnScreen from './useElementOnScreen.jsx'
 import { FaHashtag,FaCommentDots,FaShare,FaWhatsapp } from "react-icons/fa";
 import { FiMusic } from "react-icons/fi";
 import { AiOutlineHeart,AiTwotoneHeart,AiFillTwitterCircle } from "react-icons/ai";
-import { FcLike } from "react-icons/fc";
 import { BsArrowUpRightSquare,BsFacebook,BsLink45Deg } from "react-icons/bs";
 import { BiPaperPlane } from "react-icons/bi";
 import videoStyle from '../access/style/ForYou.scss'
@@ -83,10 +82,10 @@ const handleBtnFolow=()=>{
 }
 
           //mouse hover share btn in videos
-const handleMouseOver=(id)=>{
+const handleMouseEnter=(id)=>{
     setIsShowShare(true)
 }
-const handleMouseOut=()=>{
+const handleMouseLeave=()=>{
 
         setIsShowShare(false)
 
@@ -125,7 +124,7 @@ const handleMouseOut=()=>{
                           <span>{title}</span>
                           {(tag).map((tagName,index)=>{
                             return(
-                              <div className="video__right-title-tag" key={id}>
+                              <div className="video__right-title-tag" key={index}>
                                   <a href="#">
                                     <FaHashtag className='video__right-title-tag-icon'/>
                                     {tagName}
@@ -143,9 +142,10 @@ const handleMouseOut=()=>{
                             {/* videossssssssss */}
                     <div className="video__right__bottom" >
                         <div className="video__right__bottom-video">
-                            <video width="100%" height="500" loop src={video}  
-                          controls ref={videoRef} onClick={onVideoClick}>
-                          </video>
+                            <video width="100%" height="500" loop src={video} 
+                            controls ref={videoRef} onClick={onVideoClick}>
+                        
+                        </video>
                           
                         </div>
                       <div className="video__right__bottom-icons">
@@ -165,19 +165,19 @@ const handleMouseOut=()=>{
                               <strong>{comments}</strong>
                           </div>
                           <div className='video__right__bottom-icon-share'
-                            onMouseOver={()=>handleMouseOver()}
-                            onMouseOut={()=>handleMouseOut()}
+                            onMouseEnter={()=>handleMouseEnter()}
+                            onMouseLeave={()=>handleMouseLeave()}
                           >
                             <div className='icon-box'>
                                 <FaShare className='video__right__bottom-icon'/>
                             </div>
                             <strong>{share}</strong>
                             <div className={`video__right__bottom-icon-share-menus
-                          ${isShowShare ? 'block' : 'none' }`}>
+                            ${isShowShare ? 'block' : 'none' }`}>
                                 {
-                                  menus.map(item=>{
+                                  menus.map((item,index)=>{
                                     return(
-                                      <a href="#" key={id}>
+                                      <a href="#" key={index}>
                                         {item.icon}
                                         {item.title}
                                       </a>
