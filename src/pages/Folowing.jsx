@@ -2,7 +2,7 @@ import React from 'react'
 
 function Folowing() {
   return (
-    <div>Folowing</div>
+    <div>Ban chua follow idol nao ca</div>
   )
 }
 

@@ -12,6 +12,7 @@ import dataPropose from './datasPropose.jsx'
 import dataFollow from './dataFollow.jsx'
 import dataVideos from './dataVideos.jsx'
 import LeftFooter from './BodyLeftFooter.jsx'
+import GoToTop from './GoToTop'
 
 
 function Body() {
@@ -188,6 +189,8 @@ useLayoutEffect(()=>{
                 <Route path="/folowing" element={<Folowing />}></Route>
                 <Route path="/live" element={<Live />}></Route>
             </Routes>
+            
+            <GoToTop/>
         </div>
     </div>
   )

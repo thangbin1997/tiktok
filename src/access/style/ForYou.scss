@@ -13,6 +13,7 @@
     border-bottom: 1px solid RGB(239, 239, 239);
     width: 624px;
 
+
     &__left{
         img{
             width: 56px;
@@ -25,10 +26,6 @@
     margin-left: 12px;
     flex: 1 1 624px;
     position: relative;     
-
-    .video__right__head{
-
-    }
 
     .video__right-name{
         font-family: "IBM Plex Sans",SofiaPro,Arial,Tahoma,PingFangSC,sans-serif;
@@ -128,9 +125,9 @@
 
         .video__right__bottom-video{
             margin-right: 20px;
+            height: calc(450px + (100vw - 768px) / 1152 * 100);
         }
-        .video__player{
-        }
+
     }
     .video__right__bottom-icons{
         display: flex;

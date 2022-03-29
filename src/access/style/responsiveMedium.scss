@@ -99,11 +99,15 @@
     .header__middle,.coin{
         display: none;
     }
-    .video__right-btn {
-        right: 50px !important;
-    }
     .video__right-title{
-        width: 300px !important;
+        width: calc(100vw - 200px) !important;
+    }
+    .video{
+        width: calc(100vw - 32px - 70px);
+    }
+    .video__right-names{
+        display: flex;
+        flex-direction: column;
     }
 }
 

@@ -296,3 +296,115 @@ a{
 video{
     border-radius: 10px;
 }
+
+// GoToTop Component Css----------------------------------------------------
+.dowload__button{
+    right: 24px;
+    position: fixed;
+    bottom: 0px;
+    margin-bottom: 8px;
+    .dowload__button__btn{
+        border: none;
+        background: none;
+        outline: none;
+        color: rgba(22, 24, 35, 0.75);
+        font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        padding: 0 8px;
+        cursor: pointer;
+        min-width: 90px;
+        height: 32px;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+        border-radius: 52px;
+        line-height: 30px;
+        text-align: center;
+        white-space: nowrap;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(22, 24, 35, 0.12);
+        background-color: rgba(255, 255, 255, 1.0); 
+        transition: transform 0.3s cubic-bezier(.4,.14,.3,1);
+        transform-origin: right bottom;
+
+        &:hover{
+            border-color: rgba(22, 24, 35, 0.2);
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+        
+    }
+    .dowload__button__container{
+        display: flex;
+        margin-bottom: 12px;
+        position: relative;
+        transition: all 0.3s cubic-bezier(.4,.14,.3,1);
+        transform-origin: right bottom;
+        
+    }
+    .dowload__option--container{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        position: relative;
+        bottom: -1px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+        border: 1px solid rgba(22, 24, 35, 0.03);
+        border-radius: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0.14, 0.3, 1) 0s;
+        transform-origin: right bottom;
+        transform: none;
+        right: -1px;
+        display: none;
+        // asdasdasdasds
+    }
+    .dowload__button__dowload-option{
+        margin-right: 48px;
+        margin-left: 16px;
+    }
+    .dowload__button__dowload-option-pc, .dowload__button__dowload-option-mb{
+        margin: 6px;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        & span{
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+    }
+    .dowload__button__dowload-close{
+        right: 16px;
+        position: absolute;
+        top: 16px;
+        cursor: pointer;
+    }
+    .go-top-icon{
+        width: 20px;
+        height: 20px;
+    }
+    .go-to-top{
+        border: none;
+        outline: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px !important;
+        height: 32px;
+        border-radius: 52px;
+        background: rgba(254, 44, 85, 1.0);
+        box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+        float: right;
+        .go-to-top--icon{
+            width: 23px;
+            height: 23px;
+            color: white;
+        }
+        display: none;
+    }
+}

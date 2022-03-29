@@ -142,7 +142,7 @@ const handleMouseLeave=()=>{
                             {/* videossssssssss */}
                     <div className="video__right__bottom" >
                         <div className="video__right__bottom-video">
-                            <video width="100%" height="500" loop src={video} 
+                            <video width="100%" height="100%" loop src={video} 
                             controls ref={videoRef} onClick={onVideoClick}>
                         
                         </video>

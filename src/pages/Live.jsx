@@ -2,7 +2,7 @@ import React from 'react'
 
 function Live() {
   return (
-    <div>Live</div>
+    <div>Hien tai chua co idol nao dang Live. Ban vui long quay lai sau</div>
   )
 }
 
