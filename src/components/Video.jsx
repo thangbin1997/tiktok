@@ -41,13 +41,13 @@ const [isLikes,setIsLikes]=useState(false);
 const [isShowShare,setIsShowShare]=useState(false);
 const [checkFollow,setCheckFollow]=useState(isFolow);
 
+// lazy load
 const videoRef = useRef(null);
 const options = {
     root: null,
     rootMargin: '10px',
     threshold: 0.8
 }
-
 const isVisibile = useElementOnScreen(options, videoRef)
 const onVideoClick = () => {
 if (playing) {
@@ -81,21 +81,32 @@ const handleBtnFolow=()=>{
     setCheckFollow(!checkFollow)
 }
 
-          //mouse hover share btn in videos
+//mouse hover share btn in videos
 const handleMouseEnter=(id)=>{
     setIsShowShare(true)
 }
 const handleMouseLeave=()=>{
-
         setIsShowShare(false)
-
 }
+
+// hover avatar
+const avatarReview = useRef()
+const handleHoverAvatar=()=>{
+  avatarReview.current.style.display= "block"
+}
+const handleLeaveAvatar=()=>{
+      avatarReview.current.style.display= "none"
+}
+
   return (
     <div>
               <div className="video" >
                 <div className="video__left">
-                  <a href='#'>
-                    <img src={avatar} alt={nickname} />
+                  <a href='#' >
+                    <img src={avatar} alt={nickname} 
+                    onMouseEnter={handleHoverAvatar} 
+                    onMouseLeave={handleLeaveAvatar}
+                    />
                   </a>
                 </div>
 
@@ -103,7 +114,10 @@ const handleMouseLeave=()=>{
                     <div className="video__right__head">
                       {/* name vs nick name */}
                       <div className="video__right-names">
-                          <div className="video__right-name">
+                          <div className="video__right-name"
+                            onMouseEnter={handleHoverAvatar} 
+                            onMouseLeave={handleLeaveAvatar}
+                          >
                             {names}
                           </div>
                           <div className="video__right-nickname">
@@ -115,7 +129,7 @@ const handleMouseLeave=()=>{
                       <button 
                       className={`video__right-btn ${checkFollow ? 'followed' : ''}`}
                       onClick={handleBtnFolow}>
-                        {checkFollow ? "Dang follow" : "Follow"}
+                        {checkFollow ? "Đang follow" : "Follow"}
                       </button>
                       
 
@@ -189,9 +203,51 @@ const handleMouseLeave=()=>{
                         </div>
                     </div>
                 </div>
+                                {/* avatar review */}
+                <div className="video__data__review" ref={avatarReview} 
+                    onMouseEnter={handleHoverAvatar} 
+                    onMouseLeave={handleLeaveAvatar}
+                >
+                      <div className="video__data__review-space"></div>
+                      <div className="video__data__review-container">
+                                <div className="video__data__review-header">
+                                    <a href='#' className='video__data__review-header-avatar'>
+                                      <img src={avatar} alt={nickname} />
+                                    </a>
+                                    <button className='video__data__review-header-btn' onClick={handleBtnFolow}>
+                                        {checkFollow ? "Đang follow" : "Follow"}
+                                    </button>
+                                </div>
+                                <div className="video__data__review-body">
+                                      <a href="" className="video__data__review-body-names">
+                                        {names}
+                                      </a>
+                                      <span className="video__data__review-body-nickname">
+                                        {nickname}
+                                      </span>
+                                      <div className="video__data__review-body-social">
+                                          <span className="video__data__review-body-follow">
+                                              {comments}
+                                          </span>
+                                          <p>Follower</p>
+                                          <span className="video__data__review-body-like">
+                                              {like}
+                                          </span>
+                                          <p>Like</p>
+
+                                      </div>
+                                </div>
+                                <div className="video__data__review-footer">
+                                    <span className='video__data__review-footer-text'>
+                                        Chưa có tiểu sử.
+                                    </span>
+                                </div>
+                      </div>
+                </div>
               </div>
     </div>
   )
 }
 
 export default Video
+

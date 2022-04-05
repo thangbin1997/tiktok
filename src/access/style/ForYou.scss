@@ -12,9 +12,12 @@
     padding: 20px 0;
     border-bottom: 1px solid RGB(239, 239, 239);
     width: 624px;
+    position: relative;
 
-
-    &__left{
+    .video__left{
+        a{
+            display: block;
+        }
         img{
             width: 56px;
             height: 56px;
@@ -22,28 +25,8 @@
         }
     }
 }
-.video__right{
-    margin-left: 12px;
-    flex: 1 1 624px;
-    position: relative;     
-
-    .video__right-name{
-        font-family: "IBM Plex Sans",SofiaPro,Arial,Tahoma,PingFangSC,sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 25px;
-        display: inline-block;
-        margin-right: 4px;
-    }
-    .video__right-nickname{
-        font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        display: inline-block;
-        line-height: 28px;
-    }
-    .video__right-btn{
+.video__right-btn,
+.video__data__review-header-btn{
         border-width: 1px;
         border-style: solid;
         border-radius: 4px;
@@ -70,6 +53,32 @@
             background-color: rgba(254, 44, 85, 0.06);
         }
     }
+.video__right{
+    margin-left: 12px;
+    flex: 1 1 624px;
+    position: relative;     
+
+    .video__right-name{
+        font-family: "IBM Plex Sans",SofiaPro,Arial,Tahoma,PingFangSC,sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        display: inline-block;
+        margin-right: 4px;
+        cursor: pointer;
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+    .video__right-nickname{
+        font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-block;
+        line-height: 28px;
+    }
+    
     .followed{
         color: rgba(22, 24, 35,0.8);
         border-color: rgba(22, 24, 35, 0.12);
@@ -91,9 +100,13 @@
             margin-right: 8px;
         }
         .video__right-title-tag{
+            &:hover{
+                text-decoration: underline;
+            }
             margin-left: 4px;
             a{
                 font-weight: 600;
+                
             }
             &-icon{
                 width: 14px;
@@ -112,6 +125,9 @@
         line-height: 22px;
         margin-top: 4px;
         margin-bottom: 12px;
+        &:hover{
+            text-decoration: underline;
+        }
 
         .video__right-music-icon{
             width: 16px;
@@ -208,4 +224,100 @@
             }
         }
     }
+}
+
+// video__data__review
+.video__data__review{
+    top: 36px;
+    left: -8px;
+    z-index: 100;
+    position: absolute; 
+    display: none;
+    .video__data__review-space{
+        height: 40px;
+        cursor: pointer;
+    }
+    .video__data__review-container{
+        position: relative;
+        width: 320px;
+        box-sizing: border-box;
+        padding: 20px;
+        background: rgb(255, 255, 255);
+        box-shadow: inset rgb(229 224 224 / 48%) 2px 2px 0px 0px;
+        border-radius: 8px;
+    
+    }
+    .video__data__review-header{
+        display: flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        margin-bottom: 12px; 
+        
+        .video__data__review-header-avatar{
+            img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            }
+        }
+        .video__data__review-header-btn{
+            padding: 6px 8px;
+            min-width: 106px;
+            min-height: 28px;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 600;
+            font-family: ProximaNova, PingFangSC, sans-serif;
+            position: relative;
+            top: 0px;
+        }
+    }
+    .video__data__review-body{
+        display: flex;
+        flex-direction: column;
+        border-bottom:1px solid rgba(22, 24, 35, 0.12);
+        .video__data__review-body-social{
+            margin-top: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: row;
+            span{
+                font-weight: 700;
+                margin-right: 6px;
+                font-size: 17px;
+                line-height: 20px;
+                display: inline-block;
+            }
+            p{
+                color: rgba(22, 24, 35, 0.75);
+                font-size: 17px;
+                line-height: 20px;
+                display: inline-block;
+                margin-right: 12px;
+            }
+        }
+    }
+        a{
+            color: rgb(22, 24, 35);
+            font-family: "IBM Plex Sans", SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        span{
+            color: rgb(22, 24, 35);
+            font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    .video__data__review-footer{
+        padding-top: 16px;
+        line-height: 20px;
+        
+
 }
