@@ -17,6 +17,7 @@
     .video__left{
         a{
             display: block;
+            cursor: pointer;
         }
         img{
             width: 56px;
@@ -236,6 +237,9 @@
     .video__data__review-space{
         height: 40px;
         cursor: pointer;
+        position: relative;
+        left: 60px;
+        
     }
     .video__data__review-container{
         position: relative;

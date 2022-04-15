@@ -1,12 +1,14 @@
 import React from 'react'
 import { useEffect,useState, useRef } from 'react'
 import useElementOnScreen from './useElementOnScreen.jsx'
-import { FaHashtag,FaCommentDots,FaShare,FaWhatsapp } from "react-icons/fa";
 import { FiMusic } from "react-icons/fi";
+import { FaHashtag,FaCommentDots,FaShare,FaWhatsapp } from "react-icons/fa";
 import { AiOutlineHeart,AiTwotoneHeart,AiFillTwitterCircle } from "react-icons/ai";
 import { BsArrowUpRightSquare,BsFacebook,BsLink45Deg } from "react-icons/bs";
 import { BiPaperPlane } from "react-icons/bi";
+import {Route,Routes,Link, BrowserRouter} from 'react-router-dom'
 import videoStyle from '../access/style/ForYou.scss'
+import Profile from './Profile.jsx';
 const menus=[
     {
       id:1,
@@ -97,17 +99,27 @@ const handleHoverAvatar=()=>{
 const handleLeaveAvatar=()=>{
       avatarReview.current.style.display= "none"
 }
+// avatar click 
+const handleAvatarClick=()=>{
+
+}
 
   return (
     <div>
               <div className="video" >
                 <div className="video__left">
-                  <a href='#' >
+                  {/* <a href='#' >
                     <img src={avatar} alt={nickname} 
                     onMouseEnter={handleHoverAvatar} 
                     onMouseLeave={handleLeaveAvatar}
+                    onClick={handleAvatarClick}
                     />
-                  </a>
+                  </a> */}
+                <Link to="/profile" >
+                    <img src={avatar} alt={nickname} 
+                    onMouseEnter={handleHoverAvatar} 
+                    onMouseLeave={handleLeaveAvatar}/>
+                </Link>
                 </div>
 
                 <div className="video__right">
@@ -245,6 +257,9 @@ const handleLeaveAvatar=()=>{
                       </div>
                 </div>
               </div>
+      <Routes>
+          <Route path="/profile"  element={<Profile />}></Route>
+      </Routes>
     </div>
   )
 }
