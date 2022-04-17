@@ -6,7 +6,7 @@ import { FaHashtag,FaCommentDots,FaShare,FaWhatsapp } from "react-icons/fa";
 import { AiOutlineHeart,AiTwotoneHeart,AiFillTwitterCircle } from "react-icons/ai";
 import { BsArrowUpRightSquare,BsFacebook,BsLink45Deg } from "react-icons/bs";
 import { BiPaperPlane } from "react-icons/bi";
-import {Route,Routes,Link, BrowserRouter} from 'react-router-dom'
+import {Route,Routes,Link, useNavigate} from 'react-router-dom'
 import videoStyle from '../access/style/ForYou.scss'
 import Profile from './Profile.jsx';
 const menus=[
@@ -100,26 +100,21 @@ const handleLeaveAvatar=()=>{
       avatarReview.current.style.display= "none"
 }
 // avatar click 
-const handleAvatarClick=()=>{
-
+const navigate = useNavigate();
+const handleAvatarClick= (id,names) => {
+  navigate('/profile', {state:{id:id}});
 }
-
   return (
     <div>
               <div className="video" >
                 <div className="video__left">
-                  {/* <a href='#' >
+                <a to="/profile" >
                     <img src={avatar} alt={nickname} 
                     onMouseEnter={handleHoverAvatar} 
                     onMouseLeave={handleLeaveAvatar}
-                    onClick={handleAvatarClick}
+                    onClick={()=>handleAvatarClick(id)}
                     />
-                  </a> */}
-                <Link to="/profile" >
-                    <img src={avatar} alt={nickname} 
-                    onMouseEnter={handleHoverAvatar} 
-                    onMouseLeave={handleLeaveAvatar}/>
-                </Link>
+                </a>
                 </div>
 
                 <div className="video__right">

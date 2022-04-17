@@ -1,3 +1,50 @@
 .container__profile{
-    
+    display: flex;
+    padding: 40px 0 0 0;        //khoang cach vs header
+    position: relative;
+    .profile__info{
+
+    }
+    .profile__info--head{
+        display: flex;
+
+        .profile__info--head--avatar{
+            img{
+                border-radius: 50%;
+            }
+        }
+        .profile__info--head--textinfo{
+            margin-left: 20px;
+
+            &--name{
+                line-height: 30px;
+            }
+            &--btn{
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 25px;
+                position: relative;
+                width: 208px;
+                height: 36px;
+                margin-top: 16px;
+            }
+            button{
+                border-radius: 4px;
+                border: none;
+                color: rgba(255, 255, 255, 1.0);
+                background-color: rgba(254, 44, 85, 1.0);
+                cursor: pointer;
+                box-sizing: border-box;
+                min-width: 208px;
+                line-height: 22px;
+                justify-content: center;
+                padding: 6px 8px;
+                font-size: 18px;
+                font-weight: 600;
+                &:hover{
+                    background-color: #fd1342;
+                }
+            }
+        }
+    }
 }

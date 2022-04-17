@@ -4,6 +4,7 @@ import avatar from '../access/image/avatarDf.jpeg'
 import headerStyle from '../access/style/header.scss'
 import {BiCertification,BiLogOut, BiSearchAlt2,BiCloudUpload,BiPaperPlane,BiMessageAltMinus,BiCoinStack,BiUser,BiFontFamily } from "react-icons/bi";
 import { AiOutlineQuestionCircle,AiOutlineTable } from "react-icons/ai";
+import {Link} from 'react-router-dom'
 
 const menus=[
   {
@@ -45,9 +46,9 @@ const avatarHover= useRef()
     <div className='container'>
       <div className='header'>
         <div className="header__left">
-            <a href="#">
+            <Link to="/tiktok">
               <img className='header__left-logo' src={logo} alt='logo'/>
-            </a>
+            </Link>
         </div>
         <div className="header__middle">
             <div className="header__middle-container">
