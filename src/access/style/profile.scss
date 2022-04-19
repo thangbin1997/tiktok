@@ -1,9 +1,10 @@
 .container__profile{
-    display: flex;
+    // display: flex;
     padding: 40px 0 0 0;        //khoang cach vs header
     position: relative;
     .profile__info{
-
+        display: flex;
+        justify-content: space-between;
     }
     .profile__info--head{
         display: flex;
@@ -11,11 +12,14 @@
         .profile__info--head--avatar{
             img{
                 border-radius: 50%;
+                cursor: pointer;
             }
         }
         .profile__info--head--textinfo{
             margin-left: 20px;
-
+            h1,h3{
+                cursor: pointer;
+            }
             &--name{
                 line-height: 30px;
             }
@@ -43,6 +47,89 @@
                 font-weight: 600;
                 &:hover{
                     background-color: #fd1342;
+                }
+            }
+        }
+    }
+// profile body
+    .profile__info--body{
+        margin-top: 20px;
+        .profile__info--body--count{
+            display:flex;
+            margin-bottom: 20px;
+
+            &>div{
+                display: flex;
+                margin-right: 20px;
+                p{
+                    font-size: 15px;
+                    // line-height: 20px;
+                }
+                span{
+                    font-size: 16px;
+                    margin-left: 6px;
+                    color: #b3b5af;
+                }
+            }
+        }
+        .profile__info--body--desc{
+            font-size: 16px;
+        }
+        .profile__info--body--link{
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    }
+//profile right
+    .profile__info__right{
+        display: flex;
+
+        .icon{
+            width: 28px;
+            height: 28px;
+            margin-left: 14px;
+            cursor: pointer;
+        }
+        .profile__info__right--share{
+            position: relative;
+
+            &--box{
+                position: relative;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .profile__info__right--ibrp{
+            position: relative;
+
+            .there__dot--box{
+                // display: none;
+                position: absolute;
+                right: 0;
+                width: 140px;
+                padding: 6px 0;
+                border-radius: 6px;
+                -webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.5); 
+                box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.5);
+                display: none;
+                >div{
+                    cursor: pointer;
+                    padding: 10px 12px;
+                    font-weight: 600;
+                    line-height: 20px;
+
+                    svg{
+                        margin-right: 10px;
+                    }
+                    &:hover{
+                        background-color: rgba(155, 155, 155, 0.123);
+                    }
+                }
+                &--ib{
+                    border-bottom: 1px solid rgba(155, 155, 155, 0.368);
+                    
                 }
             }
         }
