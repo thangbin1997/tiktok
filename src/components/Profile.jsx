@@ -13,8 +13,12 @@ function Profile() {
     const profileId = useLocation();
     var profileById=datasVideos.find(getProfile=>getProfile.id == profileId.state.id)
 
-    const ibrpBox= useRef()
     var timeOut;
+    const ibrpBox= useRef()
+    const tab= document.querySelectorAll('.profile__bar__body--btn')
+    const line= useRef()
+    console.log(line.current.style.left);
+    
     return(
         <div className='container__profile' key={profileById.id}>
             <div className="profile__info">
@@ -66,12 +70,13 @@ function Profile() {
                     </div>
                     <div className="profile__info__right--ibrp">
                         <BsThreeDots className='icon there__dot' 
-                            onMouseEnter={()=>{ibrpBox.current.style.display="block"}}
-                            onMouseLeave={()=>{timeOut=setTimeout(() => {
+                            onMouseEnter={()=>{ibrpBox.current.style.display="block"}}          //onMouseEnter
+                            onMouseLeave={()=>{timeOut=setTimeout(() => {                       //settimeout onmouse
                                 ibrpBox.current.style.display="none"
                             }, 300);}}
                         />
-                        <div className="there__dot--box" ref={ibrpBox} onMouseEnter={()=>{ibrpBox.current.style.display="block";clearTimeout(timeOut)}}
+                        <div className="there__dot--box" ref={ibrpBox} 
+                            onMouseEnter={()=>{ibrpBox.current.style.display="block";clearTimeout(timeOut)}}
                             onMouseLeave={()=>{timeOut=setTimeout(() => {
                                 ibrpBox.current.style.display="none"
                             }, 300);}}
@@ -88,18 +93,20 @@ function Profile() {
                     </div>
                 </div>
             </div>
+                                    {/* show video profile */}
             <div className="profile__bar__body">
-                <div className="profile__bar__body--btn">
-                    <div className='profile__bar__body--btn--video'>
-                        <span>Video</span>
+                    <div className="profile__bar__body--btn">
+                        <div className='profile__bar__body--btn--video' re>
+                            <span>Video</span>
+                        </div>
                     </div>
-                </div>
-                <div className="profile__bar__body--btn">
-                    <div className='profile__bar__body--btn--liked'>
-                        <FaLock className='profile__bar__body--icon'/>
-                        <span>Đã thích</span>
+                    <div className="profile__bar__body--btn">
+                        <div className='profile__bar__body--btn--liked'>
+                            <FaLock className='profile__bar__body--icon'/>
+                            <span>Đã thích</span>
+                        </div>
                     </div>
-                </div>
+                    <div className="line" ref={line}></div>
             </div>
 
             <div className="profile__list__video">

@@ -134,4 +134,45 @@
             }
         }
     }
+    .profile__bar__body{
+        margin-top: 30px;
+        display: flex;
+        position: relative;
+
+        .profile__bar__body--btn{
+            width: 230px;
+            align-items: center;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            position: relative;
+            height: 44px;
+            cursor: pointer;
+            text-align: center;
+            color: rgba(18, 18, 18, 0.686);
+            justify-content: center;
+            display: flex;
+            position: relative;
+            
+            
+            svg{
+                margin-right: 6px;
+            }
+        }
+        .line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 6px;
+            border-radius: 15px;
+            background-color: #c23564;
+            transition: all 0.2s ease;
+        }
+    }
+
+    .profile__list__video{
+        min-height: 490px;
+        min-width: 520px;
+    }
 }
