@@ -8,17 +8,41 @@ import profileStyle from '../access/style/profile.scss'
 import Linktoshare from './Linktoshare.jsx'
 import { useLocation } from 'react-router-dom';
 import datasVideos from './dataVideos';
+import fullWidth from '../access/style/fullWidth.scss'
+import { BsPlay } from 'react-icons/bs';
 
 function Profile() {
     const profileId = useLocation();
+                                                                            //get info when click 
     var profileById=datasVideos.find(getProfile=>getProfile.id == profileId.state.id)
-
+    var names=profileById.names                                             //get names of id
+    var profileVideos=datasVideos.filter(getVideo=>getVideo.names == names) //get all info by name
+ 
     var timeOut;
     const ibrpBox= useRef()
-    const tab= document.querySelectorAll('.profile__bar__body--btn')
-    const line= useRef()
-    console.log(line.current.style.left);
-    
+    //------------set line in fisrt time render
+    useEffect(()=> {
+        var tabActive= document.querySelector('.profile__bar__body--btn.active')
+        console.log(tabActive);
+        var line= document.querySelector('.line')
+        line.style.width = tabActive.offsetWidth + "px";
+        line.style.left = tabActive.offsetLeft + "px";
+      },[])
+    //------------set line when click
+    useEffect(()=>{
+        var line= document.querySelector('.line')
+        var tabs= document.querySelectorAll('.profile__bar__body--btn')
+        tabs.forEach(tab=>{
+
+            tab.onclick=()=>{
+                document.querySelector('.active').classList.remove('active')
+                tab.classList.add('active')
+                line.style.width=tab.offsetWidth + "px"
+                line.style.left= tab.offsetLeft + "px"
+            }
+        })
+    },[])
+    //--------
     return(
         <div className='container__profile' key={profileById.id}>
             <div className="profile__info">
@@ -95,8 +119,8 @@ function Profile() {
             </div>
                                     {/* show video profile */}
             <div className="profile__bar__body">
-                    <div className="profile__bar__body--btn">
-                        <div className='profile__bar__body--btn--video' re>
+                    <div className="profile__bar__body--btn active">
+                        <div className='profile__bar__body--btn--video' >
                             <span>Video</span>
                         </div>
                     </div>
@@ -106,12 +130,31 @@ function Profile() {
                             <span>Đã thích</span>
                         </div>
                     </div>
-                    <div className="line" ref={line}></div>
+                    <div className="line" ></div>
             </div>
 
             <div className="profile__list__video">
                 <div className="profile__list__video--videos">
-                    video
+                    {profileVideos.map((profileVideo,index)=>{
+                        return(
+                            <div className="profile__video" key={index}>
+                                <video width="100%"  loop
+                                src={profileVideo.video} className="profile__video__item">
+                                </video>
+                                <div className='profile__video--like'>
+                                    <span>
+                                        <BsPlay/>
+                                        {profileVideo.like}
+                                    </span>
+                                </div>
+                                <div className='profile__video--title'>
+                                    <span>
+                                        {profileVideo.title}
+                                    </span>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className="profile__list__video--title">
                     <span>mieu ta ngan cua video...</span>

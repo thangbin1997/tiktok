@@ -45,7 +45,7 @@ const avatarHover= useRef()
   return (
     <div className='container'>
       <div className='header'>
-        <div className="header__left">
+        <div className="header__left" >      {/* style={{width: "1150px"}} */}
             <Link to="/tiktok">
               <img className='header__left-logo' src={logo} alt='logo'/>
             </Link>

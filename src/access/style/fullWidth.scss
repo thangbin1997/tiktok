@@ -1,0 +1,14 @@
+.header{
+    max-width: none !important;        //header full container
+}
+.container__body{
+    max-width: none;        //body full container
+}
+.body__left{
+    width: 240px;
+    padding: 20px 0 26px 8px;
+}
+.body__right{
+    width: calc(100% - 300px) !important;
+    max-width: 100% !important;
+}

@@ -1,3 +1,4 @@
+
 .container__profile{
     // display: flex;
     padding: 40px 0 0 0;        //khoang cach vs header
@@ -134,10 +135,12 @@
             }
         }
     }
+    //profile body
     .profile__bar__body{
         margin-top: 30px;
         display: flex;
         position: relative;
+        margin-bottom: 8px;
 
         .profile__bar__body--btn{
             width: 230px;
@@ -149,7 +152,8 @@
             height: 44px;
             cursor: pointer;
             text-align: center;
-            color: rgba(18, 18, 18, 0.686);
+            color: rgba(18, 18, 18, 0.811);
+            opacity: 0.6;
             justify-content: center;
             display: flex;
             position: relative;
@@ -162,17 +166,66 @@
         .line {
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: 2px;
             width: 0;
-            height: 6px;
+            height: 3px;
             border-radius: 15px;
-            background-color: #c23564;
-            transition: all 0.2s ease;
+            background-color: #1d1d1d;
+            transition: all 0.3s ease;
+        }
+        .active{
+            opacity: 1;
         }
     }
 
     .profile__list__video{
         min-height: 490px;
         min-width: 520px;
+    }
+
+    //profile video item
+    .profile__list__video--videos{
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+        .profile__video{
+            width: calc((100%/8 - 16px));
+            margin-right: 16px;
+            margin-bottom: 12px;
+            position: relative;
+            .profile__video__item{
+                cursor: pointer;
+            }
+            .profile__video--like{
+                position: absolute;
+                top: 280px;
+                left: 14px;
+                color: white;
+                justify-content:center ;
+                align-items: center;
+                line-height: 24px;
+                text-align: center;
+                svg{
+                    width: 24px;
+                    height: 24px;
+                    position: relative;
+                    top: 6px;
+                }
+                span{
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+            }
+            .profile__video--title{
+                margin-top: 8px;
+                span{
+                    text-overflow: ellipsis;
+                    width: 180px;
+                    white-space: nowrap; 
+                    overflow: hidden;
+                    display: block;
+                }
+            }
+        }
     }
 }
