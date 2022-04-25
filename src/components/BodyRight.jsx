@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route,Routes,Link, BrowserRouter} from 'react-router-dom'
+import {Route,Routes} from 'react-router-dom'
 import ForYou from '../pages/ForYou.jsx'
 import Folowing from '../pages/Folowing.jsx'
 import Live from '../pages/Live.jsx'
@@ -8,14 +8,16 @@ import style from '../access/style/body.scss'
 import Profile from './Profile.jsx'
 
 
-function BodyRight() {
+function  BodyRight(props) {
+  // console.log(props);
+
   return (
     <div className="body__right">
             <Routes>
-                <Route path="/tiktok/*"  element={<ForYou />}></Route>
+                <Route path="/tiktok/*"  element={<ForYou  value={props.value} containerFull={props.containerFull}/>}></Route>
                 <Route path="/folowing" element={<Folowing />}></Route>
                 <Route path="/live" element={<Live />}></Route>
-                <Route path="/profile" element={<Profile />}></Route>
+                <Route path="/profile" element={<Profile/>}></Route>
             </Routes>
             
             <GoToTop/>

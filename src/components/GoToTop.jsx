@@ -10,7 +10,7 @@ function GoToTop() {
 
 const optionRef= useRef()
 const btnDowload= useRef()
-const btnToTop= useRef()
+const btnToTop= useRef(null)
 
 useEffect(() => {
     window.addEventListener("scroll", scrollFunction)
@@ -38,8 +38,13 @@ const handleClose=()=>{
     btnDowload.current.style.display= "block"
 
 }
-const handleToTop=()=>{
-    window.scrollTo(0, 0)
+const handleToTop = () => {
+    if (btnToTop && btnToTop.current) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }
 }
   return (
     <div className="dowload__button">

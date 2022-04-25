@@ -1,4 +1,4 @@
-import {React,useEffect, useRef} from 'react'
+import {React,useEffect, useRef, useState} from 'react'
 import { FiLink } from 'react-icons/fi';
 import { RiShareForwardLine } from 'react-icons/ri';
 import { BsThreeDots } from 'react-icons/bs';
@@ -8,7 +8,7 @@ import profileStyle from '../access/style/profile.scss'
 import Linktoshare from './Linktoshare.jsx'
 import { useLocation } from 'react-router-dom';
 import datasVideos from './dataVideos';
-import fullWidth from '../access/style/fullWidth.scss'
+// import fullWidth from '../access/style/fullWidth.scss'
 import { BsPlay } from 'react-icons/bs';
 
 function Profile() {
@@ -20,10 +20,14 @@ function Profile() {
  
     var timeOut;
     const ibrpBox= useRef()
+    const listVideos= useRef()
+    const btnVideo= useRef()
+    const btnLiked= useRef()
+    const likedBox= useRef()
+    
     //------------set line in fisrt time render
     useEffect(()=> {
         var tabActive= document.querySelector('.profile__bar__body--btn.active')
-        console.log(tabActive);
         var line= document.querySelector('.line')
         line.style.width = tabActive.offsetWidth + "px";
         line.style.left = tabActive.offsetLeft + "px";
@@ -39,10 +43,21 @@ function Profile() {
                 tab.classList.add('active')
                 line.style.width=tab.offsetWidth + "px"
                 line.style.left= tab.offsetLeft + "px"
+                if(btnVideo.current.classList[1]=='active'){
+                    console.log(btnVideo.current.classList[1]);
+                    listVideos.current.style.display="block"
+                    likedBox.current.style.display="none"
+                }
+                else if(btnLiked.current.classList[1]=='active'){
+                    console.log(btnLiked.current.classList[1]);
+                    listVideos.current.style.display="none"
+                    likedBox.current.style.display="block"
+                }
             }
         })
     },[])
     //--------
+    
     return(
         <div className='container__profile' key={profileById.id}>
             <div className="profile__info">
@@ -119,12 +134,12 @@ function Profile() {
             </div>
                                     {/* show video profile */}
             <div className="profile__bar__body">
-                    <div className="profile__bar__body--btn active">
+                    <div className="profile__bar__body--btn active" ref={btnVideo}>
                         <div className='profile__bar__body--btn--video' >
                             <span>Video</span>
                         </div>
                     </div>
-                    <div className="profile__bar__body--btn">
+                    <div className="profile__bar__body--btn" ref={btnLiked}>
                         <div className='profile__bar__body--btn--liked'>
                             <FaLock className='profile__bar__body--icon'/>
                             <span>Đã thích</span>
@@ -132,20 +147,22 @@ function Profile() {
                     </div>
                     <div className="line" ></div>
             </div>
-
-            <div className="profile__list__video">
+                                {/* profile video item */}
+            <div className="profile__list__video" ref={listVideos}>
                 <div className="profile__list__video--videos">
                     {profileVideos.map((profileVideo,index)=>{
                         return(
                             <div className="profile__video" key={index}>
-                                <video width="100%"  loop
-                                src={profileVideo.video} className="profile__video__item">
-                                </video>
-                                <div className='profile__video--like'>
-                                    <span>
-                                        <BsPlay/>
-                                        {profileVideo.like}
-                                    </span>
+                                <div className="profile__video__box">
+                                    <video width="100%"  loop
+                                    src={profileVideo.video} className="profile__video__item">
+                                    </video>
+                                    <div className='profile__video--like'>
+                                        <span>
+                                            <BsPlay/>
+                                            {profileVideo.like}
+                                        </span>
+                                    </div>
                                 </div>
                                 <div className='profile__video--title'>
                                     <span>
@@ -156,9 +173,13 @@ function Profile() {
                         )
                     })}
                 </div>
-                <div className="profile__list__video--title">
-                    <span>mieu ta ngan cua video...</span>
-                </div>
+            </div>
+            <div className="profile__list__video--title" ref={likedBox}>
+                <span>
+                    <FaLock/>
+                    <h1><strong>Video đã thích của người dùng này ở trạng thái riêng tư</strong></h1>
+                    <p>Các video được thích bởi {profileById.names} hiện đang ẩn</p>
+                </span>
             </div>
         </div>
     )

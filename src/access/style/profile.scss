@@ -168,7 +168,7 @@
             left: 0;
             bottom: 2px;
             width: 0;
-            height: 3px;
+            height: 2px;
             border-radius: 15px;
             background-color: #1d1d1d;
             transition: all 0.3s ease;
@@ -193,18 +193,19 @@
             margin-right: 16px;
             margin-bottom: 12px;
             position: relative;
+            .profile__video__box{
+                position: relative;
+            }
             .profile__video__item{
                 cursor: pointer;
             }
             .profile__video--like{
                 position: absolute;
-                top: 280px;
-                left: 14px;
+                bottom: 0;
+                height: 30px;
+                width: 100%;
                 color: white;
-                justify-content:center ;
-                align-items: center;
-                line-height: 24px;
-                text-align: center;
+                padding-bottom: 10%;
                 svg{
                     width: 24px;
                     height: 24px;
@@ -219,12 +220,40 @@
             .profile__video--title{
                 margin-top: 8px;
                 span{
+                    width: 100%;
                     text-overflow: ellipsis;
-                    width: 180px;
                     white-space: nowrap; 
                     overflow: hidden;
                     display: block;
                 }
+            }
+        }
+    }
+    .profile__list__video--title{
+        min-height: 500px;
+        justify-content: center;
+        display: none;
+        margin-top: 20%;
+        
+        span{
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            svg{
+                width: 100px;
+                height: 100px;
+                opacity: 0.3;
+                margin-bottom: 30px;
+            }
+            h1{
+                font-size: 25px;
+            }
+            p{
+                font-size: 20px;
+                margin-top: 8px;
+                opacity: 0.8;
             }
         }
     }

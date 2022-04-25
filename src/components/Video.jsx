@@ -9,6 +9,9 @@ import { BiPaperPlane } from "react-icons/bi";
 import {Route,Routes,Link, useNavigate} from 'react-router-dom'
 import videoStyle from '../access/style/ForYou.scss'
 import Profile from './Profile.jsx';
+import { useSelector, useDispatch } from "react-redux";
+import {fullWidth} from '../actions/IsFullWidth'
+
 const menus=[
     {
       id:1,
@@ -36,12 +39,13 @@ const menus=[
       title:'Sao chép liên kết'
     }
   ]
-const Video = ({id, names, nickname, title, tag, music, like, comments, share, isFolow,avatar,video}) => {
+const Video = ({id, names, nickname, title, tag, music, like, comments, share, isFolow,avatar,video,props}) => {
 
 const [playing, setPlaying] = useState(false);
 const [isLikes,setIsLikes]=useState(false);
 const [isShowShare,setIsShowShare]=useState(false);
 const [checkFollow,setCheckFollow]=useState(isFolow);
+const [render, setRender]= useState(false)
 
 // lazy load
 const videoRef = useRef(null);
@@ -99,10 +103,19 @@ const handleHoverAvatar=()=>{
 const handleLeaveAvatar=()=>{
       avatarReview.current.style.display= "none"
 }
+
 // avatar click 
+const setFullWidth = useSelector((state)=>state.setFullWidth)       //useSelector redux
+const dispatch= useDispatch()                                       //dispatch redux
+
+const sendata=()=>{
+  props.containerFull(true)
+}
 const navigate = useNavigate();
-const handleAvatarClick= (id,names) => {
+const handleAvatarClick= (id) => {
+  // sendata()
   navigate('/profile', {state:{id:id}});
+  dispatch(fullWidth())
 }
   return (
     <div>
