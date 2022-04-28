@@ -8,6 +8,8 @@ import dataPropose from './datasPropose.jsx'
 import dataFollow from './dataFollow.jsx'
 import dataVideos from './dataVideos.jsx'
 import LeftFooter from './BodyLeftFooter.jsx'
+import { useSelector, useDispatch } from "react-redux";
+import {notFullWidth} from '../actions/IsFullWidth'
 
 function BodyLeft() {
     const [dataProposes, setDataProposes] = useState(dataPropose)
@@ -32,13 +34,18 @@ var setTime;
             setCheckElementHover(false)
         }, 500);
     }
+//set full width
+const setNotFullWidth = useSelector((state)=>state.notFullWidth)       //useSelector redux
+const dispatch= useDispatch()                                       //dispatch redux
 
+//menu click
 useEffect(() => {
     const menuItems= document.querySelectorAll(".body__left__pages-list-item")
     menuItems.forEach((menuItem)=>{
         menuItem.onclick=()=>{
             document.querySelector('.pages-active').classList.remove('pages-active')
             menuItem.classList.add('pages-active')
+            dispatch(notFullWidth())
         }
     })
 }, [])
@@ -57,6 +64,9 @@ useLayoutEffect(()=>{
     }
     else setIsDataReview(false)
 })
+
+
+
   return (
         // <div className='container__body'>
         

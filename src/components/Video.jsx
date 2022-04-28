@@ -45,7 +45,6 @@ const [playing, setPlaying] = useState(false);
 const [isLikes,setIsLikes]=useState(false);
 const [isShowShare,setIsShowShare]=useState(false);
 const [checkFollow,setCheckFollow]=useState(isFolow);
-const [render, setRender]= useState(false)
 
 // lazy load
 const videoRef = useRef(null);
@@ -108,9 +107,9 @@ const handleLeaveAvatar=()=>{
 const setFullWidth = useSelector((state)=>state.setFullWidth)       //useSelector redux
 const dispatch= useDispatch()                                       //dispatch redux
 
-const sendata=()=>{
-  props.containerFull(true)
-}
+// const sendata=()=>{
+//   props.containerFull(true)
+// }
 const navigate = useNavigate();
 const handleAvatarClick= (id) => {
   // sendata()

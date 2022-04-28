@@ -4,7 +4,15 @@ import avatar from '../access/image/avatarDf.jpeg'
 import headerStyle from '../access/style/header.scss'
 import {BiCertification,BiLogOut, BiSearchAlt2,BiCloudUpload,BiPaperPlane,BiMessageAltMinus,BiCoinStack,BiUser,BiFontFamily } from "react-icons/bi";
 import { AiOutlineQuestionCircle,AiOutlineTable } from "react-icons/ai";
-import {Link} from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux";
+import {notFullWidth} from '../actions/IsFullWidth'
+import NavMess from './NavMess';
+import {Link,Route,Routes} from 'react-router-dom';
+import NavMessAll from '../pages/NavMessPage/NavMessAll';
+import NavMessComment from '../pages/NavMessPage/NavMessComment';
+import NavMessFollower from '../pages/NavMessPage/NavMessFollower';
+import NavMessLike from '../pages/NavMessPage/NavMessLike';
+import NavMessMention from '../pages/NavMessPage/NavMessMention';
 
 const menus=[
   {
@@ -35,6 +43,9 @@ const menus=[
 ]
 function  Header () {
 const avatarHover= useRef()
+// const setFullWidth = useSelector((state)=>state.notFullWidth)       //useSelector redux
+const dispatch= useDispatch()                                       //dispatch redux
+
   const handleMouseOver=()=>{
     avatarHover.current.style.display = 'block'
   }
@@ -46,7 +57,7 @@ const avatarHover= useRef()
     <div className='container'>
       <div className='header'>
         <div className="header__left" >      {/* style={{width: "1150px"}} */}
-            <Link to="/tiktok">
+            <Link to="/tiktok" onClick={()=>{dispatch(notFullWidth())}}>
               <img className='header__left-logo' src={logo} alt='logo'/>
             </Link>
         </div>
@@ -84,7 +95,7 @@ const avatarHover= useRef()
                 <div className="mail-box__text header__hover">
                   <div className="icon__text">Hộp thư</div>
                 </div>
-
+                  <NavMess/>
               <li className='coin'>
                 <a href="#"><BiCoinStack className='header__right__icon earnCoin'/></a>
                 </li>
@@ -120,6 +131,7 @@ const avatarHover= useRef()
                 }
                 </div>
             </div>
+                
         </div>
     </div>
     </div>

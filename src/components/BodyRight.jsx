@@ -14,7 +14,7 @@ function  BodyRight(props) {
   return (
     <div className="body__right">
             <Routes>
-                <Route path="/tiktok/*"  element={<ForYou  value={props.value} containerFull={props.containerFull}/>}></Route>
+                <Route path="/tiktok/*"  element={<ForYou/>}></Route>
                 <Route path="/folowing" element={<Folowing />}></Route>
                 <Route path="/live" element={<Live />}></Route>
                 <Route path="/profile" element={<Profile/>}></Route>

@@ -10,7 +10,7 @@ function Body(props) {
     
     <div className='container__body'>
         <BodyLeft/>
-        <BodyRight value={props.value} containerFull={props.containerFull}/>
+        <BodyRight/>
     </div>
         
   )

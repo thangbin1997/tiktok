@@ -12,15 +12,11 @@ import { useSelector } from "react-redux";
 function App() {
   const [value, setValue] = React.useState(false);
   const FullWidth = useSelector((state)=>state.isFullWidth)
-  console.log(useSelector((state)=>state.isFullWidth));
-  function handleChange(e) {
-    console.log(e);
-    setValue(e);
-  }
+
   return (
       <div className={`App ${FullWidth && 'container__full'}`}>
           <Header/>
-          <Body value={value} containerFull={handleChange}/>
+          <Body/>
       </div>    
   );
 }
