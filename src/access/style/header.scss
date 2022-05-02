@@ -165,13 +165,19 @@
 .mess:hover ~ .mess__text{
     display: block;
 }
+.mail-box{
+    position: relative;
+}
 .mail-box:hover ~ .mail-box__text{
     display: block;
 }
+
 .coin:hover ~ .coin__text{
     display: block;
 }
-
+.willactive{
+    display: block;
+}
 .header__right__avatar{
     position: relative;
 

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef,useState,useEffect } from 'react'
 import logo from '../access/image/TikTok_logo.svg'
 import avatar from '../access/image/avatarDf.jpeg'
 import headerStyle from '../access/style/header.scss'
@@ -13,6 +13,7 @@ import NavMessComment from '../pages/NavMessPage/NavMessComment';
 import NavMessFollower from '../pages/NavMessPage/NavMessFollower';
 import NavMessLike from '../pages/NavMessPage/NavMessLike';
 import NavMessMention from '../pages/NavMessPage/NavMessMention';
+import listenForOutsideClick from './ListenClickOutside'
 
 const menus=[
   {
@@ -41,10 +42,12 @@ const menus=[
     title:'Đăng xuất'
   }
 ]
+
 function  Header () {
-const avatarHover= useRef()
-// const setFullWidth = useSelector((state)=>state.notFullWidth)       //useSelector redux
-const dispatch= useDispatch()                                       //dispatch redux
+  const avatarHover= useRef()
+  // const setFullWidth = useSelector((state)=>state.notFullWidth)       //useSelector redux
+  const dispatch= useDispatch()                                       //dispatch redux
+  const navmess_Box=useRef()
 
   const handleMouseOver=()=>{
     avatarHover.current.style.display = 'block'
@@ -53,6 +56,14 @@ const dispatch= useDispatch()                                       //dispatch r
     avatarHover.current.style.display = 'none'
 
   }
+  const mailBox=()=>{
+    setIsOpen(!isOpen)
+  }
+  //click outside will hide
+  const menuRef = useRef(null);                             //gan cho doi tuong cha
+  const [isOpen, setIsOpen]=useState(false)                 
+  const [listening, setListening] = useState(false);        
+  useEffect(listenForOutsideClick(listening, setListening, menuRef, setIsOpen));
   return (
     <div className='container'>
       <div className='header'>
@@ -76,28 +87,31 @@ const dispatch= useDispatch()                                       //dispatch r
         <div className="header__right">
             <ul>
               <li className='upload'>
-                <a href="#"><BiCloudUpload className='header__right__icon'/></a>
+                <a><BiCloudUpload className='header__right__icon'/></a>
               </li>
                 <div className="upload__text header__hover">
                   <div className="icon__text aaa">Tải video lên</div>
                 </div>
 
               <li className='mess'>
-                <a href="#"><BiPaperPlane className='header__right__icon mess'/></a>
+                <a><BiPaperPlane className='header__right__icon mess'/></a>
               </li>
               <div className="mess__text header__hover">
                   <div className="icon__text">Tin nhắn</div>
                 </div>
-
-              <li className='mail-box'>
-                <a href="#"><BiMessageAltMinus className='header__right__icon boxMess'/></a>
+                {/* navmess and click outside-- willactive is: display block */}
+              <li className={isOpen ? "mail-box willactive" : "mail-box"} ref={menuRef}> 
+                <a  onClick={mailBox}><BiMessageAltMinus className='header__right__icon boxMess'/></a>
+                    {
+                      isOpen ? <NavMess/> : <></>
+                    }
                 </li>
+
                 <div className="mail-box__text header__hover">
                   <div className="icon__text">Hộp thư</div>
                 </div>
-                  <NavMess/>
               <li className='coin'>
-                <a href="#"><BiCoinStack className='header__right__icon earnCoin'/></a>
+                <a><BiCoinStack className='header__right__icon earnCoin'/></a>
                 </li>
                 <div className="coin__text header__hover">
                   <div className="icon__text">Nhận xu</div>
@@ -107,7 +121,7 @@ const dispatch= useDispatch()                                       //dispatch r
                onMouseOver={()=>handleMouseOver()}
                onMouseOut={()=>handleMouseOut()}
             >
-              <a href="#" className="header__right__avatars">
+              <a className="header__right__avatars">
                 <img src={avatar} alt="avartar"/>
               </a>
                 <div className="header__right__avatar__menus" ref={avatarHover}>

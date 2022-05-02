@@ -1,42 +1,20 @@
 :root{
     --text-opa: rgba(165, 164, 164, 0.856);
 }
+
 .navmess{
-    position: absolute;
-    overflow: auto;
-
-    // overflow-x: hidden;
-    // overflow-y: auto;
-    // overscroll-behavior-y: contain;
-    // overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    &:hover{
-        &::-webkit-scrollbar-thumb {
-            background: rgb(212, 212, 212);
-        }
-    }
-    &::-webkit-scrollbar {
-        width: 6px;
-        height: 50px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: white;
-    }
-    &::-webkit-scrollbar-thumb {
-        border-radius: 15px;
-    }
-
-    left: 100px;//asdasdasd
+    right: -90px;
     width: 376px;
     max-height: 640px;
-    border: 1px solid black;
-    top: 55px;
     border-radius: 8px;
+    position: absolute;
+    top: 45px;
     box-shadow: rgb(0 0 0 / 12%) 0px -4px 32px;
     transition: all 200ms linear 0s;
     z-index: 1000;
     background-color: white;
     padding: 16px 12px;
+    // display: none;
     h2{
         display: flex;
         justify-content: flex-start;
@@ -69,6 +47,29 @@
     .navmess__tab--all--box{         //navmess__tab--all--box
         display: flex;
         flex-direction: column;
+        height: 400px;
+        overflow: auto;
+
+        // overflow-x: hidden;
+        // overflow-y: auto;
+        // overscroll-behavior-y: contain;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        &:hover{
+            &::-webkit-scrollbar-thumb {
+                background: rgb(212, 212, 212);
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 50px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: white;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+        }
 
         .navmess__tab--request--follow{
             display: flex;
@@ -190,4 +191,23 @@
         }
 
     }
+}
+.navmess__tab__comment-icon,
+.navmess__tab__mention-icon,
+.navmess__tab__follow-icon{
+    padding: 88px 32px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comment-text,.mention-text,.follow-text{
+    margin-top: 10px;
+    opacity: 0.8;
+    font-size: 15px;
+}
+.comment-icon,.mention-icon,.follow-icon{
+    height: 120px;
+    width: 120px;
+    color: var(--text-opa);
+    margin-bottom: 10px;
 }
