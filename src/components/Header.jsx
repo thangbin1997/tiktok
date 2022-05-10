@@ -8,11 +8,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {notFullWidth} from '../actions/IsFullWidth'
 import NavMess from './NavMess';
 import {Link,Route,Routes} from 'react-router-dom';
-import NavMessAll from '../pages/NavMessPage/NavMessAll';
-import NavMessComment from '../pages/NavMessPage/NavMessComment';
-import NavMessFollower from '../pages/NavMessPage/NavMessFollower';
-import NavMessLike from '../pages/NavMessPage/NavMessLike';
-import NavMessMention from '../pages/NavMessPage/NavMessMention';
 import listenForOutsideClick from './ListenClickOutside'
 
 const menus=[

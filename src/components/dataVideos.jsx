@@ -22,6 +22,8 @@ import video17 from '../access/video/video17.mp4'
 import video18 from '../access/video/video18.mp4'
 import video19 from '../access/video/video19.mp4'
 import video20 from '../access/video/video20.mp4'
+import video99 from '../access/video/Video99.mp4'
+
 
 
 const randomLike=()=>{
@@ -72,7 +74,7 @@ const datasVideos=[
         share:randomShare(),
         isFolow:false,
         avatar:avatar1,
-        video:video1,
+        video:video99,
     },
     {
         id:2,

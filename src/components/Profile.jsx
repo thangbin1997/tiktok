@@ -8,10 +8,12 @@ import profileStyle from '../access/style/profile.scss'
 import Linktoshare from './Linktoshare.jsx'
 import { useLocation } from 'react-router-dom';
 import datasVideos from './dataVideos';
-// import fullWidth from '../access/style/fullWidth.scss'
 import { BsPlay } from 'react-icons/bs';
 
 function Profile() {
+
+    const [idShowShareBox, setIsShowShareBox]= useState(false)
+
     const profileId = useLocation();
                                                                             //get info when click 
     var profileById=datasVideos.find(getProfile=>getProfile.id == profileId.state.id)
@@ -24,7 +26,7 @@ function Profile() {
     const btnVideo= useRef()
     const btnLiked= useRef()
     const likedBox= useRef()
-    
+    const share_btn= useRef()
     //------------set line in fisrt time render
     useEffect(()=> {
         var tabActive= document.querySelector('.profile__bar__body--btn.active')
@@ -56,8 +58,14 @@ function Profile() {
             }
         })
     },[])
-    //--------
-    
+    //-------- hover Share btn will show share box component
+    const handleShareBtnHover=()=>{
+        setIsShowShareBox(true)
+    }
+    const handleShareBtnLeave=()=>{
+        setIsShowShareBox(false)
+
+    }
     return(
         <div className='container__profile' key={profileById.id}>
             <div className="profile__info">
@@ -104,8 +112,16 @@ function Profile() {
                 </div>
                 <div className="profile__info__right">
                     <div className="profile__info__right--share" >
-                        <RiShareForwardLine className='icon share__btn'/>
-                        <Linktoshare className="profile__info__right--share--box"/>
+                        <RiShareForwardLine className='icon share__btn' ref={share_btn}
+                            onMouseEnter={handleShareBtnHover} onMouseLeave={handleShareBtnLeave}
+                            />
+                    </div>
+                    <div className="profile__info__right--share--box"
+                        onMouseEnter={handleShareBtnHover} onMouseLeave={handleShareBtnLeave}
+                    >
+                        {
+                            idShowShareBox && <Linktoshare/>
+                        }
                     </div>
                     <div className="profile__info__right--ibrp">
                         <BsThreeDots className='icon there__dot' 

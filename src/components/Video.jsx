@@ -11,6 +11,8 @@ import videoStyle from '../access/style/ForYou.scss'
 import Profile from './Profile.jsx';
 import { useSelector, useDispatch } from "react-redux";
 import {fullWidth} from '../actions/IsFullWidth'
+import VideoFullscreen from './VideoFullscreen.jsx';
+import Linktoshare from './Linktoshare.jsx';
 
 const menus=[
     {
@@ -39,12 +41,15 @@ const menus=[
       title:'Sao chép liên kết'
     }
   ]
-const Video = ({id, names, nickname, title, tag, music, like, comments, share, isFolow,avatar,video,props}) => {
-
+const Video = ({id, names, nickname, title, tag, music, like, comments,
+                 share, isFolow,avatar,video}) => {
+const data={id, names, nickname, title, tag, music, like, comments,
+  share, isFolow,avatar,video}
 const [playing, setPlaying] = useState(false);
 const [isLikes,setIsLikes]=useState(false);
 const [isShowShare,setIsShowShare]=useState(false);
 const [checkFollow,setCheckFollow]=useState(isFolow);
+const [isFullScreen, setIsFullScreen] = useState(false)
 
 // lazy load
 const videoRef = useRef(null);
@@ -55,7 +60,7 @@ const options = {
 }
 const isVisibile = useElementOnScreen(options, videoRef)
 const onVideoClick = () => {
-if (playing) {
+if (playing && isFullScreen) {
     videoRef.current.pause();
     setPlaying(!playing);
 } else {
@@ -87,11 +92,11 @@ const handleBtnFolow=()=>{
 }
 
 //mouse hover share btn in videos
-const handleMouseEnter=(id)=>{
+const handleMouseEnter=()=>{
     setIsShowShare(true)
 }
 const handleMouseLeave=()=>{
-        setIsShowShare(false)
+    setIsShowShare(false)
 }
 
 // hover avatar
@@ -115,6 +120,15 @@ const handleAvatarClick= (id) => {
   // sendata()
   navigate('/profile', {state:{id:id}});
   dispatch(fullWidth())
+}
+
+const handleShowFullScreenVideo=()=>{
+  setIsFullScreen(true)
+}
+const hanldeClose=()=>{
+  setIsFullScreen(false)
+  videoRef.current.play();
+  setPlaying(!playing);
 }
   return (
     <div>
@@ -174,10 +188,11 @@ const handleAvatarClick= (id) => {
                     </div>
                             {/* videossssssssss */}
                     <div className="video__right__bottom" >
-                        <div className="video__right__bottom-video">
+                        <div className="video__right__bottom-video" style={{cursor:"pointer"}}
+                        onClick={handleShowFullScreenVideo}>
                             <video width="100%" height="100%" loop src={video} 
                             controls ref={videoRef} onClick={onVideoClick}>
-                        
+                              
                         </video>
                           
                         </div>
@@ -191,34 +206,29 @@ const handleAvatarClick= (id) => {
                               </div>
                               <strong>{like}</strong>
                           </div>
-                          <div className="video__right__bottom-icon-comment">
+                          <div className="video__right__bottom-icon-comment" 
+                          onClick={handleShowFullScreenVideo}>
                               <div className='icon-box'>
                                   <FaCommentDots className='video__right__bottom-icon'/>
                               </div>
                               <strong>{comments}</strong>
                           </div>
                           <div className='video__right__bottom-icon-share'
-                            onMouseEnter={()=>handleMouseEnter()}
-                            onMouseLeave={()=>handleMouseLeave()}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
                           >
                             <div className='icon-box'>
                                 <FaShare className='video__right__bottom-icon'/>
                             </div>
                             <strong>{share}</strong>
-                            <div className={`video__right__bottom-icon-share-menus
-                            ${isShowShare ? 'block' : 'none' }`}>
+                          </div>
+                            <div className='video__right__bottom-icon-share-menus'
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}>  
                                 {
-                                  menus.map((item,index)=>{
-                                    return(
-                                      <a href="#" key={index}>
-                                        {item.icon}
-                                        {item.title}
-                                      </a>
-                                    )
-                                  })
+                                 isShowShare && <Linktoshare/>
                                 }
                             </div>
-                          </div>
                         </div>
                     </div>
                 </div>
@@ -267,6 +277,7 @@ const handleAvatarClick= (id) => {
       <Routes>
           <Route path="/profile"  element={<Profile />}></Route>
       </Routes>
+      { isFullScreen && <VideoFullscreen data={data} close={hanldeClose}/>}
     </div>
   )
 }

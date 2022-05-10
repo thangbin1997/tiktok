@@ -5,7 +5,7 @@ import { BsArrowUpRightSquare,BsFacebook,BsLink45Deg } from "react-icons/bs";
 import { BiPaperPlane } from "react-icons/bi";
 import linktoshareStyle from '../access/style/Linktoshare.scss'
 
-const menus=[
+export const menus=[
     {
       id:1,
       icon:<BsArrowUpRightSquare style={{color: "black",backgroundColor:"gray"}}/>,

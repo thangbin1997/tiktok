@@ -31,6 +31,13 @@ useEffect(() => {
     }
   })
 }, [])
+
+useEffect(() => {
+  blockAllTab()
+  request_box.current.style.display="block"
+  like_box.current.style.display="block"
+}, [])
+
 const blockAllTab=()=>{
   like_box.current.style.display='none'
   comment_box.current.style.display='none'
@@ -44,7 +51,7 @@ const handleLikeClick=()=>{
 }
 const handleAllClick=()=>{
   blockAllTab()
-  request_box.current.style.display='block'
+  request_box.current.style.display="block"
   like_box.current.style.display="block"
 }
 const handleCommentClick=()=>{

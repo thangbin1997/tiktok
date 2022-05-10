@@ -5,7 +5,7 @@
     position: relative;
     .profile__info{
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
     }
     .profile__info--head{
         display: flex;
@@ -85,7 +85,7 @@
 //profile right
     .profile__info__right{
         display: flex;
-
+        margin-left: 10%;
         .icon{
             width: 28px;
             height: 28px;
@@ -96,9 +96,10 @@
             position: relative;
 
             &--box{
+                display: block;
                 position: relative;
-                right: 0;
-                top: 0;
+                right: 280%;
+                top: 280px;
             }
         }
 
