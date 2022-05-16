@@ -81,9 +81,9 @@ function  Header () {
         </div>
         <div className="header__right">
             <ul>
-              <li className='upload'>
+              <Link to='/upload' className='upload'>
                 <a><BiCloudUpload className='header__right__icon'/></a>
-              </li>
+              </Link>
                 <div className="upload__text header__hover">
                   <div className="icon__text aaa">Tải video lên</div>
                 </div>

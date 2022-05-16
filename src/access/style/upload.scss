@@ -1,0 +1,311 @@
+@mixin upload_text_bold {
+    font-weight: 500; 
+    font-size: 13px;
+}
+.upload__container{
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    font-family: sofiapro-regular, PingFangSC, system-ui, Arial, Tahoma;
+    margin-top: 60px;
+}
+
+.upload__content{
+    margin: 0px auto;
+    width: 1100px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: rgb(248, 248, 248);
+}
+
+.upload__content__container{
+    width: 1100px;
+    box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    padding: 24px 56px;
+    .upload__content__heading{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .upload__content__title{
+        color: rgb(22 24 35 / 50%);
+        font-size: 18px;
+        margin-top: 6px;
+        display: block;
+    }
+}
+.upload__content__body{
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 130px;
+    .upload__content__body--input{
+        display: none;
+    }
+    .upload__content__body--foder{
+        margin-top: 24px;
+        width: 260px;
+        height: 458px;
+        border: 2px dashed rgba(22, 24, 35, 0.2);
+        border-radius: 8px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        transition: background 0.15s ease-in-out 0s;
+        padding:0 35px;
+        &:hover{
+            border: 2px dashed rgb(254, 44, 85);
+            background-color: rgba(22, 24, 35, 0.03);;
+        }
+        svg{
+            width: 50px;
+            height: 50px;
+            color: gray;
+        }
+        .foder--text--main{
+            text-align: center;
+            margin-top: 24px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .foder--text--sub{
+            margin-top: 4px;
+            margin-bottom: 24px;
+            color: gray;
+        }
+        .foder--text--video__info{
+            div{
+                margin-bottom: 6px;
+                text-align: center;
+                span{
+                    color: gray;
+                };
+            }
+        }
+        .foder--select--btn{
+            margin-top: 32px;
+            width: 100%;
+            cursor: pointer;
+            button{
+                background-color: rgba(254, 44, 86, 0.9);
+                color: white;
+                padding: 1px 15px;
+                width: 100%;
+                height: 36px;
+                border-radius: 4px;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgb(254, 44, 86);
+                }
+            }
+        }
+    }
+
+
+    .upload__content__body--info{
+        margin-left: 24px;
+        flex: 1 1 0%;
+        min-width: 0px;
+        .upload__content__body--info--caption{
+            margin-bottom: 24px;
+            .upload__content__body--info--caption-text{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                .caption-text{
+                   font-weight: 500; 
+                   font-size: 13px;
+                }
+                .caption-number{
+                    color: rgba(128, 128, 128, 0.562);
+                }
+            }
+        }
+        .upload__content__body--info--caption-input{
+            margin-top: 4px;
+            width: 100%;
+            border: 1px solid RGB(236, 237, 237);
+            border-radius: 3px;
+            padding: 8px;
+            .caption-input{
+                width: 90%;
+                line-height: 22px;
+                white-space: pre-wrap;
+                overflow-wrap: break-word;
+                overflow: auto;
+                margin-right: 3%;
+                &:focus{
+                    outline: none;
+                }
+            }
+            span{
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 16px;
+                margin-right: 8px;
+            }
+        }
+    }
+    .upload__content__body--info--image{
+        margin-top: 24px;
+        .image-text{
+            @include upload_text_bold;
+        }
+        .upload__content__body--info--image-container{
+            width: 100%;
+            border: 1px solid RGB(236, 237, 237);
+            border-radius: 3px;
+            padding: 6px;
+            .upload__content__body--info--image-container-item{
+                height: 150px;
+                background-color: rgba(22, 24, 35, 0.03);
+                width: calc(100% / 9);
+            }
+        }
+    }
+    .upload__content__body--info--title-v2{
+        margin-top: 24px;
+        .title-v2-text{
+            @include upload_text_bold;
+            margin-bottom: 4px;
+        }
+        .title-v2-drop_down_list-box{
+            position: relative;
+            margin-top: 8px;
+            .title-v2-drop_down_list{
+                width: 300px;
+                height: 36px;
+                border: 1px solid RGB(236, 237, 237);
+                border-radius: 3px;
+                outline: none;
+            }
+            option {
+                background-color: white;
+                padding: 8px 0px;
+                z-index: 99;
+                &:focus{
+                    background-color: rgb(133, 14, 202);
+                }
+            }
+        }
+        input[type=checkbox] {
+            position: relative;
+            cursor: pointer;
+        }
+        input[type=checkbox]:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            left: 0;
+            border: 2px solid #555555;
+            border-radius: 3px;
+            background-color: rgb(254, 43, 84);
+            // background-color: rgb(159, 159, 159);
+        }
+        input[type=checkbox]:checked:after {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 2px;
+            left: 6px;
+        }
+        .title-v2__check_box{
+            margin-top: 24px;
+            .title-v2__check_box__container{
+                margin-top: 8px;
+                display: flex;
+                .title-v2__check_box-item{
+                    margin-right: 30px;
+                }
+                .title-v2__check_box-text{
+                    margin-left: 20px;
+                    text-align: center;
+                    line-height: 40px;
+                    align-items: center;
+                    vertical-align: middle;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .upload__content__body--info_check_content{
+        margin-top: 24px;
+        .check_content-text{
+            @include upload_text_bold;
+            font-size: 16px;
+            margin-right: 16px;
+            line-height: 24px;
+            text-align: center;
+            align-items: center;
+            vertical-align: middle;
+        }
+        .check_content-info{
+            margin-top: 12px;
+            .check_content-info-not_check{
+            }
+            .check_content-info-checked{
+                display: none;
+                background-color: RGB(241, 241, 241);
+                padding: 12px;
+                border-radius: 4px;
+            }
+            .info_not_check-text{
+                font-size: 14px;
+                color: gray;
+            }
+            a{
+                font-weight: bold;
+            }
+            .check_content-info-checked-icon{
+                color: red;
+                font-size: 18px;
+                line-height: 24px;
+                text-align: center;
+                align-items: center;
+                vertical-align: middle;
+                margin: 0px 8px;
+            }
+        }
+    }
+    .upload__content__bottom_btn{
+        margin-top: 24px;
+        button{
+            width: 150px;
+            height: 45px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 1px 23px;
+            background-color: white;
+            border: 1px solid rgba(128, 128, 128, 0.179);
+        }
+        .btn_cancel{
+            cursor: pointer;
+            margin-right: 12px;
+            &:hover{
+                background-color: rgba(128, 128, 128, 0.218);
+            }
+        }
+        .btn_post{
+            cursor: not-allowed;
+            color: rgb(22 24 35 / 34%);
+            background-color: rgb(242, 242, 242);
+            border-color: rgb(242, 242, 242);
+        }
+    }
+}
+.display_none{
+    display: none;
+}
