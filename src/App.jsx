@@ -18,6 +18,7 @@ import ForYou from './pages/ForYou.jsx';
 import Folowing from './pages/Folowing.jsx';
 import Live from './pages/Live.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Message from './pages/Message.jsx';
 //
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                   <Route path="profile" element={<Profile/>}/>
               </Route>
               <Route path='upload'  element={<UpLoad/>}/>
+              <Route path='message' element={<Message/>}/>
           </Routes>
           <GoToTop/>
           

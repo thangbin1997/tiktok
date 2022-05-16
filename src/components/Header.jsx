@@ -88,9 +88,9 @@ function  Header () {
                   <div className="icon__text aaa">Tải video lên</div>
                 </div>
 
-              <li className='mess'>
+              <Link to='/message' className='mess'>
                 <a><BiPaperPlane className='header__right__icon mess'/></a>
-              </li>
+              </Link>
               <div className="mess__text header__hover">
                   <div className="icon__text">Tin nhắn</div>
                 </div>
